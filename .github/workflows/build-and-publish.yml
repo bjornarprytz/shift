@@ -7,17 +7,14 @@ on:
       - "v*"
 
 env:
-  ITCHIO_USERNAME: [ITCHIO_USERNAME]
-  GAME_NAME: [GAME_NAME]
+  ITCHIO_USERNAME: thewarlock
+  GAME_NAME: shift
   PROJECT_PATH: "./src/"
-  GODOT_VERSION: [GODOT_VERSION]
+  GODOT_VERSION: 4.7-stable
 
 jobs:
   export-game:
     name: Export game
-    # Template stop flag: this workflow is disabled until you configure it for your game.
-    # Remove this line (or set it to `if: true`) once the env values above are filled in.
-    if: false
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
