@@ -2,15 +2,38 @@
 
 game on itch.io: [link](https://thewarlock.itch.io/shift)
 
-## TODO
+## Synopsis
 
-- Import the project into Godot
+Pick a character out of a shifty lineup
+
+## TODO (nice-to-have)
+
+- Game loop
+  - Load lineup (they walk in)
+  - Shift the light between the suspects (they react to the scrutiny)
+  - Pick a suspect based on a profile (Score)
+  - Do it over again
+
+- Characters
+  - Head
+    - Shape: rect, circle, (triangle, pill)
+    - Hair
+    - Size
+    - Eyes
+    - Nose
+    - Chin
+    - Cheeks
+    - Ears
+    - Color
+  - Body Language (based on emotional registers)
+    - Eyes (darting, focused, angry, relaxed)
+    - Mouth (happy, sad, indifferent, impatient)
+    - Breathing (frequency, rhythm)
+    - Skin (blushing, ghost-white, sweating)
+    - Feet (Standing still, jittering)
+    - Arms (Crossed, In pockets, down, to the sides)
 
 - Push release with `./scripts/push_release.sh`
-- Go [here](https://thewarlock.itch.io/shift/edit) and edit game:
-  - Check "This file will be played in the browser"
-  - Set viewport dimensions (normal: 1280x720)
-  - Check SharedArrayBuffer
 
 ### Extra
 
