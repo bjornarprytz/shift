@@ -1,8 +1,10 @@
 [gd_scene format=3 uid="uid://ceptal4ijvbvi"]
 
 [ext_resource type="Texture2D" uid="uid://bwxpxo4b6l348" path="res://assets/img/white-1x1.png" id="1_3oivy"]
+[ext_resource type="Script" uid="uid://dum5fde158akc" path="res://interface/suspect.gd" id="1_l3hxl"]
 
-[node name="Character" type="Node2D" unique_id=1999595215]
+[node name="Suspect" type="Node2D" unique_id=1999595215]
+script = ExtResource("1_l3hxl")
 
 [node name="Head" type="Node2D" parent="." unique_id=407186953]
 
@@ -23,12 +25,12 @@ scale = Vector2(78.000015, 48.554916)
 texture = ExtResource("1_3oivy")
 
 [node name="Eyes" type="RichTextLabel" parent="Head" unique_id=52618118]
-self_modulate = Color(0, 0, 0, 1)
 offset_left = 177.0
 offset_top = 25.0
 offset_right = 264.3957
 offset_bottom = 200.0
 rotation = 1.5707964
+theme_override_colors/default_color = Color(0.5278891, 0.52788895, 0.52788895, 1)
 theme_override_font_sizes/normal_font_size = 128
 text = ":"
 fit_content = true
@@ -36,12 +38,12 @@ autowrap_mode = 0
 metadata/_edit_use_anchors_ = true
 
 [node name="Nose" type="RichTextLabel" parent="Head" unique_id=555008132]
-self_modulate = Color(0, 0, 0, 1)
 offset_left = 71.99999
 offset_top = 21.000008
 offset_right = 142.0
 offset_bottom = 196.0
 rotation = 0.2617994
+theme_override_colors/default_color = Color(0.5278891, 0.52788895, 0.52788895, 1)
 theme_override_font_sizes/normal_font_size = 64
 text = "L"
 fit_content = true
@@ -49,12 +51,12 @@ autowrap_mode = 0
 metadata/_edit_use_anchors_ = true
 
 [node name="Mouth" type="RichTextLabel" parent="Head" unique_id=1567096394]
-self_modulate = Color(0, 0, 0, 1)
 offset_left = 125.0
 offset_top = 108.0
 offset_right = 172.0
 offset_bottom = 196.0
 rotation = 1.5707964
+theme_override_colors/default_color = Color(0.5278891, 0.52788895, 0.52788895, 1)
 theme_override_font_sizes/normal_font_size = 64
 text = ")"
 fit_content = true
@@ -62,7 +64,6 @@ autowrap_mode = 0
 metadata/_edit_use_anchors_ = true
 
 [node name="EarL" type="RichTextLabel" parent="Head" unique_id=939117731]
-self_modulate = Color(0, 0, 0, 1)
 offset_left = -31.0
 offset_top = 27.0
 offset_right = 16.0
@@ -73,8 +74,7 @@ fit_content = true
 autowrap_mode = 0
 metadata/_edit_use_anchors_ = true
 
-[node name="EarL2" type="RichTextLabel" parent="Head" unique_id=878412250]
-self_modulate = Color(0, 0, 0, 1)
+[node name="EarR" type="RichTextLabel" parent="Head" unique_id=878412250]
 offset_left = 138.0
 offset_top = 27.0
 offset_right = 185.0
@@ -115,3 +115,13 @@ position = Vector2(137, 270)
 rotation = 2.8221705
 scale = Vector2(42.791733, 203.6539)
 texture = ExtResource("1_3oivy")
+
+[node name="Control" type="Control" parent="." unique_id=1045583950]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -64.0
+offset_right = 217.0
+offset_bottom = 687.0
+
+[connection signal="mouse_entered" from="Control" to="." method="_on_control_mouse_entered"]
+[connection signal="mouse_exited" from="Control" to="." method="_on_control_mouse_exited"]
