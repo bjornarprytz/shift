@@ -10,16 +10,12 @@ script = ExtResource("1_loxbi")
 
 [node name="Character" parent="." unique_id=1999595215 instance=ExtResource("2_rfu3d")]
 position = Vector2(91, 22)
-scale = Vector2(0.4301372, 0.4301372)
 
 [node name="Character2" parent="." unique_id=6904838 instance=ExtResource("2_rfu3d")]
 position = Vector2(417, 27)
-scale = Vector2(0.61357236, 0.61357236)
 
 [node name="Character3" parent="." unique_id=526597295 instance=ExtResource("2_rfu3d")]
 position = Vector2(710, 26)
-scale = Vector2(0.74475, 0.74475)
 
 [node name="Character4" parent="." unique_id=28385294 instance=ExtResource("2_rfu3d")]
 position = Vector2(1033, 30)
-scale = Vector2(0.3192726, 0.3192726)

@@ -14,24 +14,30 @@ Pick a character out of a shifty lineup
   - Pick a suspect based on a profile (Score)
   - Do it over again
 
-- Characters
-  - Head
-    - Shape: rect, circle, (triangle, pill)
-    - Hair
-    - Size
-    - Eyes
-    - Nose
-    - Chin
-    - Cheeks
-    - Ears
-    - Color
-  - Body Language (based on emotional registers)
-    - Eyes (darting, focused, angry, relaxed)
-    - Mouth (happy, sad, indifferent, impatient)
-    - Breathing (frequency, rhythm)
-    - Skin (blushing, ghost-white, sweating)
-    - Feet (Standing still, jittering)
-    - Arms (Crossed, In pockets, down, to the sides)
+- Mouth
+  - Talking animations
+- Effects
+  - Twitch
+  - Blushing / Whitening
+
+### Assets
+
+- Head
+  - 3 variations
+- Eyebrows
+  - 4 variations
+- Mouth
+  - 3 variations
+  - Animations
+- Hair
+  - 5 variations
+- Ears
+  - 3 variations
+- Node
+  - 5 variations
+- "Witness booth"
+  - Glass "reflection" showing player character
+- Lineup background
 
 - Push release with `./scripts/push_release.sh`
 

@@ -10,11 +10,11 @@ extends Node2D
 @onready var brow: Sprite2D = %Brow
 
 var focal_point: Vector2
-var lid_gap_upper: float
-var lid_gap_lower: float
+var lid_gap_upper: float = 10.0
+var lid_gap_lower: float = 5.0
 var brow_angle: float
 
-var field_of_view: float = 500.0
+var field_of_view: float = 200.0
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -27,10 +27,26 @@ func _process(delta: float) -> void:
 	_align_brow()
 
 func _place_pupil():
-	pass
+	var direction = (focal_point - global_position).normalized()
+	var radius = _get_eyeball_radius()
+	var limits = [-radius, radius]
+
+	var distance = (focal_point - global_position).length()
+	if distance < field_of_view:
+		# Normalize field of view to the radius of the eyeball
+		var normalized_distance = distance / field_of_view
+		var pupil_offset = direction * radius * normalized_distance
+		pupil.position = pupil_offset
+	else:
+		pupil.position = direction * radius
 	
 func _set_lids():
-	pass
+	upper_lid.position.y = pupil.position.y - lid_gap_upper - upper_lid.size.y
+	lower_lid.position.y = lid_gap_lower + pupil.position.y
 
 func _align_brow():
 	pass
+
+
+func _get_eyeball_radius() -> float:
+	return eye_ball.texture.get_width() / 2.0

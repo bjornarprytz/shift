@@ -38,13 +38,15 @@ offset_left = 98.0
 offset_top = 148.0
 offset_right = 173.0
 offset_bottom = 170.0
+rotation = 1.2252014
 color = Color(0.16470589, 0.43137255, 0.6666667, 1)
 
 [node name="ArmL" type="ColorRect" parent="Body" unique_id=138839835]
-offset_left = -31.0
-offset_top = 148.0
-offset_right = 44.0
-offset_bottom = 170.0
+offset_left = 19.0
+offset_top = 220.00002
+offset_right = 94.0
+offset_bottom = 242.00002
+rotation = -1.3170906
 color = Color(0.16470589, 0.43137255, 0.6666667, 1)
 
 [node name="Head" type="Node2D" parent="." unique_id=407186953]
@@ -78,13 +80,15 @@ flip_h = true
 position = Vector2(0, 9)
 
 [node name="EyeR" parent="Head/Eyes" unique_id=1449849314 instance=ExtResource("6_ry35b")]
+unique_name_in_owner = true
 position = Vector2(90, 59)
 
-[node name="EyeR2" parent="Head/Eyes" unique_id=110510116 instance=ExtResource("6_ry35b")]
+[node name="EyeL" parent="Head/Eyes" unique_id=110510116 instance=ExtResource("6_ry35b")]
+unique_name_in_owner = true
 position = Vector2(46, 59)
 is_left_eye = true
 
-[node name="Sprite2D" type="Sprite2D" parent="Head" unique_id=1584257992]
+[node name="Hair" type="Sprite2D" parent="Head" unique_id=1584257992]
 texture_filter = 3
 position = Vector2(62, -9)
 texture = ExtResource("8_ry35b")
