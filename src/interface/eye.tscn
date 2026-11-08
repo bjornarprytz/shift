@@ -1,0 +1,43 @@
+[gd_scene format=3 uid="uid://cdrefvkg7grrb"]
+
+[ext_resource type="Texture2D" uid="uid://c2jnbtcs4d71a" path="res://assets/img/eye.png" id="1_0wp2y"]
+[ext_resource type="Script" uid="uid://cl276qq5bh4ui" path="res://interface/eye.gd" id="1_aamum"]
+[ext_resource type="Texture2D" uid="uid://bpehe6p6st4oc" path="res://assets/img/pupil.png" id="2_aamum"]
+[ext_resource type="Texture2D" uid="uid://yxvwthqdub0e" path="res://assets/img/brow.png" id="3_46jgc"]
+
+[node name="Eye" type="Node2D" unique_id=1449849314]
+script = ExtResource("1_aamum")
+
+[node name="EyeBall" type="Sprite2D" parent="." unique_id=488278877]
+unique_name_in_owner = true
+clip_children = 2
+texture_filter = 3
+texture = ExtResource("1_0wp2y")
+
+[node name="Pupil" type="Sprite2D" parent="EyeBall" unique_id=340894400]
+unique_name_in_owner = true
+texture = ExtResource("2_aamum")
+
+[node name="UpperLid" type="ColorRect" parent="EyeBall" unique_id=1613742458]
+unique_name_in_owner = true
+modulate = Color(0.74271166, 0.7427116, 0.7427116, 1)
+offset_left = -18.0
+offset_top = -45.0
+offset_right = 35.0
+offset_bottom = -5.0
+color = Color(0.72156864, 0.36862746, 0.14117648, 1)
+
+[node name="LowerLid" type="ColorRect" parent="EyeBall" unique_id=658355903]
+unique_name_in_owner = true
+modulate = Color(0.7411765, 0.7411765, 0.7411765, 1)
+offset_left = -20.0
+offset_top = 5.0
+offset_right = 33.0
+offset_bottom = 45.0
+color = Color(0.72156864, 0.36862746, 0.14117648, 1)
+
+[node name="Brow" type="Sprite2D" parent="." unique_id=167363112]
+unique_name_in_owner = true
+texture_filter = 3
+position = Vector2(0, -24)
+texture = ExtResource("3_46jgc")
