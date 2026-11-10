@@ -97,6 +97,10 @@ unique_name_in_owner = true
 position = Vector2(46, 59)
 is_left_eye = true
 
+[node name="BlinkTimer" type="Timer" parent="Head/Eyes" unique_id=97424028]
+unique_name_in_owner = true
+autostart = true
+
 [node name="Hair" type="Sprite2D" parent="Head" unique_id=1584257992]
 texture_filter = 3
 position = Vector2(62, -9)
@@ -109,5 +113,6 @@ offset_left = -64.0
 offset_right = 217.0
 offset_bottom = 454.0
 
+[connection signal="timeout" from="Head/Eyes/BlinkTimer" to="." method="_on_blink_timer_timeout"]
 [connection signal="mouse_entered" from="Control" to="." method="_on_control_mouse_entered"]
 [connection signal="mouse_exited" from="Control" to="." method="_on_control_mouse_exited"]
