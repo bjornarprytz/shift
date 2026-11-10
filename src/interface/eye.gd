@@ -10,8 +10,8 @@ extends Node2D
 @onready var brow: Sprite2D = %Brow
 
 var focal_point: Vector2
-var lid_gap_upper: float = 10.0
-var lid_gap_lower: float = 5.0
+var lid_gap_upper: float = randf_range(2.0, 10.0)
+var lid_gap_lower: float = randf_range(2.0, 10.0)
 var brow_angle: float
 
 var field_of_view: float = 200.0
