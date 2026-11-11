@@ -9,13 +9,25 @@ script = ExtResource("1_loxbi")
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=657149999]
 
 [node name="Character" parent="." unique_id=1999595215 instance=ExtResource("2_rfu3d")]
-position = Vector2(91, 22)
+position = Vector2(-646, 130)
 
 [node name="Character2" parent="." unique_id=6904838 instance=ExtResource("2_rfu3d")]
-position = Vector2(417, 27)
+position = Vector2(-425, 122)
 
 [node name="Character3" parent="." unique_id=526597295 instance=ExtResource("2_rfu3d")]
-position = Vector2(710, 26)
+position = Vector2(-223, 120)
 
 [node name="Character4" parent="." unique_id=28385294 instance=ExtResource("2_rfu3d")]
-position = Vector2(1033, 30)
+position = Vector2(-978, 388)
+
+[node name="SuspectPos" type="Node2D" parent="." unique_id=915520473]
+position = Vector2(128, 481)
+
+[node name="SuspectPos2" type="Node2D" parent="." unique_id=1842261313]
+position = Vector2(348, 481)
+
+[node name="SuspectPos3" type="Node2D" parent="." unique_id=916098514]
+position = Vector2(586, 481)
+
+[node name="SuspectPos4" type="Node2D" parent="." unique_id=506876304]
+position = Vector2(873, 481)

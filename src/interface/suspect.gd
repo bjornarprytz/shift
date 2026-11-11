@@ -1,6 +1,8 @@
+class_name Suspect
 extends Node2D
 
 @export var suspect_name: String = ["J", "S", "D", "G", "C", "L"].pick_random()
+@export var walk_speed: float = 400.0
 
 @onready var eye_r: Eye = %EyeR
 @onready var eye_l: Eye = %EyeL
@@ -11,17 +13,51 @@ extends Node2D
 @onready var ear_l: FacePart = %EarL
 @onready var blink_timer: Timer = %BlinkTimer
 
+@onready var body: Node2D = %Body
+@onready var head: Node2D = %Head
+@onready var walk_anchor: Node2D = %WalkAnchor
+
 var part: CanvasItem
+
+var target_pos: Vector2
+var bob_tween: Tween
 
 func _process(delta: float) -> void:
 	eye_r.focal_point = get_global_mouse_position()
 	eye_l.focal_point = get_global_mouse_position()
+	
+	if (target_pos != global_position):
+		self.global_position = global_position.move_toward(target_pos, delta * walk_speed)
+	elif bob_tween != null:
+		_stop_bob()
+
+func _stop_bob():
+	await bob_tween.loop_finished
+	bob_tween.kill()
 
 func _on_control_mouse_entered() -> void:
 	unnerve()
 
 func _on_control_mouse_exited() -> void:
 	renerve()
+
+func walk_to(target_global: Vector2):
+	var bob_height := 10.0
+	var walk_vector = target_global - walk_anchor.global_position
+	
+	if (walk_vector.length() == 0):
+		return
+	
+	target_pos = self.global_position + walk_vector
+	bob_tween = create_tween().set_parallel().set_loops()
+	bob_tween.tween_property(body, "position:y", -bob_height, 0.3).as_relative()
+	bob_tween.tween_property(head, "position:y", -bob_height, 0.3).as_relative()
+	bob_tween.set_parallel(false)
+	bob_tween.tween_property(body, "position:y", bob_height, 0.1).as_relative()
+	bob_tween.set_parallel(true)
+	bob_tween.tween_property(head, "position:y", bob_height, 0.1).as_relative()
+	bob_tween.play()
+	
 
 func blink() -> void:
 	var closing_phase_duration = randf_range(.05, .1)
@@ -44,15 +80,10 @@ func blink() -> void:
 	await tween.finished
 
 func unnerve() -> void:
-	var part_list = [[nose], [mouth], [ear_r, ear_l]]
-
-	var part_group = part_list.pick_random()
-	for part in part_group:
-		print ("TODO: Blush %s" % part.name)
+	pass
 
 func renerve() -> void:
 	pass
-
 
 func _on_blink_timer_timeout() -> void:
 	await blink()

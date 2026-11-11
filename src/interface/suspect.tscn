@@ -13,6 +13,7 @@
 script = ExtResource("1_l3hxl")
 
 [node name="Body" type="Node2D" parent="." unique_id=580880312]
+unique_name_in_owner = true
 
 [node name="Neck" type="ColorRect" parent="Body" unique_id=1256003101]
 offset_left = 60.0
@@ -51,6 +52,7 @@ rotation = -1.3170906
 color = Color(0.16470589, 0.43137255, 0.6666667, 1)
 
 [node name="Head" type="Node2D" parent="." unique_id=407186953]
+unique_name_in_owner = true
 
 [node name="Head" type="Sprite2D" parent="Head" unique_id=1166561222]
 modulate = Color(0.72176814, 0.3683803, 0.14154443, 1)
@@ -106,12 +108,16 @@ texture_filter = 3
 position = Vector2(62, -9)
 texture = ExtResource("8_ry35b")
 
+[node name="WalkAnchor" type="Node2D" parent="." unique_id=1246086625]
+unique_name_in_owner = true
+position = Vector2(72, 347)
+
 [node name="Control" type="Control" parent="." unique_id=1045583950]
 layout_mode = 3
 anchors_preset = 0
-offset_left = -64.0
-offset_right = 217.0
-offset_bottom = 454.0
+offset_left = -8.0
+offset_right = 148.0
+offset_bottom = 358.0
 
 [connection signal="timeout" from="Head/Eyes/BlinkTimer" to="." method="_on_blink_timer_timeout"]
 [connection signal="mouse_entered" from="Control" to="." method="_on_control_mouse_entered"]
