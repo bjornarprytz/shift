@@ -24,3 +24,8 @@ func _on_right_button_pressed() -> void:
 
 func _on_button_mouse_entered(source: Control) -> void:
 	print("Hovering button %s" % [source])
+
+
+func _on_line_edit_text_submitted(new_text: String) -> void:
+	for c in [character, character_2, character_3, character_4]:
+		c.say(new_text)

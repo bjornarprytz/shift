@@ -8,7 +8,7 @@ extends Node2D
 @onready var eye_l: Eye = %EyeL
 
 @onready var nose: FacePart = %Nose
-@onready var mouth: FacePart = %Mouth
+@onready var mouth: Mouth = %Mouth
 @onready var ear_r: FacePart = %EarR
 @onready var ear_l: FacePart = %EarL
 @onready var blink_timer: Timer = %BlinkTimer
@@ -41,17 +41,32 @@ func _on_control_mouse_entered() -> void:
 func _on_control_mouse_exited() -> void:
 	renerve()
 
+func say(phrase: String):
+	phrase = phrase.strip_edges()
+	var length = phrase.length()
+	if (length == 0):
+		return
+	var clip_length = 5000 #ms
+	var per_letter_length:float = (clip_length / length) / 1000.0
+	for l in phrase:
+		mouth.enounciate(l)
+		await get_tree().create_timer(per_letter_length).timeout
+
 func walk_to(target_global: Vector2):
 	var bob_height := 10.0
 	var walk_vector = target_global - walk_anchor.global_position
+	var offset = randf_range(0.01, 0.2)
 	
 	if (walk_vector.length() == 0):
 		return
 	
 	target_pos = self.global_position + walk_vector
-	bob_tween = create_tween().set_parallel().set_loops()
-	bob_tween.tween_property(body, "position:y", -bob_height, 0.3).as_relative()
-	bob_tween.tween_property(head, "position:y", -bob_height, 0.3).as_relative()
+	bob_tween = create_tween()
+	bob_tween.tween_interval(offset)
+	bob_tween.set_loops()
+	bob_tween.tween_property(body, "position:y", -bob_height, 0.1).as_relative()
+	bob_tween.set_parallel()
+	bob_tween.tween_property(head, "position:y", -bob_height, 0.1).as_relative()
 	bob_tween.set_parallel(false)
 	bob_tween.tween_property(body, "position:y", bob_height, 0.1).as_relative()
 	bob_tween.set_parallel(true)

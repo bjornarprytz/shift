@@ -8,6 +8,10 @@ script = ExtResource("1_loxbi")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=657149999]
 
+[node name="LineEdit" type="LineEdit" parent="CanvasLayer" unique_id=330073287]
+offset_right = 926.0
+offset_bottom = 44.0
+
 [node name="Character" parent="." unique_id=1999595215 instance=ExtResource("2_rfu3d")]
 position = Vector2(-646, 130)
 
@@ -31,3 +35,5 @@ position = Vector2(586, 481)
 
 [node name="SuspectPos4" type="Node2D" parent="." unique_id=506876304]
 position = Vector2(873, 481)
+
+[connection signal="text_submitted" from="CanvasLayer/LineEdit" to="." method="_on_line_edit_text_submitted"]

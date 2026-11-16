@@ -5,9 +5,45 @@
 [ext_resource type="Texture2D" uid="uid://b3a7vhdw6tqqv" path="res://assets/img/nose.png" id="3_fk6ea"]
 [ext_resource type="Texture2D" uid="uid://wr201aj6pigx" path="res://assets/img/ear_r.png" id="3_u27fx"]
 [ext_resource type="Script" uid="uid://dxa2eotmwf04p" path="res://interface/face_part.gd" id="4_6axyl"]
-[ext_resource type="Texture2D" uid="uid://cwbs8q71nnoky" path="res://assets/img/mouth.png" id="4_x7une"]
+[ext_resource type="Texture2D" uid="uid://bt5uibsmtlvm5" path="res://assets/img/mouth_a.png" id="5_yoc2o"]
+[ext_resource type="Texture2D" uid="uid://dtro171okh4nt" path="res://assets/img/mouth_e.png" id="6_c3sxv"]
 [ext_resource type="PackedScene" uid="uid://cdrefvkg7grrb" path="res://interface/eye.tscn" id="6_ry35b"]
+[ext_resource type="Texture2D" uid="uid://bgsibp7cqg5d4" path="res://assets/img/mouth_f.png" id="7_t8iyd"]
+[ext_resource type="Texture2D" uid="uid://1bnyvxu12jup" path="res://assets/img/mouth_i.png" id="8_p6wng"]
 [ext_resource type="Texture2D" uid="uid://bk8xebiqa67qn" path="res://assets/img/hair.png" id="8_ry35b"]
+[ext_resource type="Texture2D" uid="uid://cjyfpk8rlssbf" path="res://assets/img/mouth_o.png" id="9_60fgq"]
+[ext_resource type="Texture2D" uid="uid://kr38vs1mjmip" path="res://assets/img/mouth_y.png" id="10_dqdch"]
+[ext_resource type="Script" uid="uid://bltjl5hdj7u3c" path="res://interface/mouth.gd" id="11_c3sxv"]
+[ext_resource type="Texture2D" uid="uid://b80dcltnbi8up" path="res://assets/img/mouth_m.png" id="11_t8iyd"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_gwkry"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_yoc2o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_c3sxv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_t8iyd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_p6wng")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_60fgq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_dqdch")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_t8iyd")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="Suspect" type="Node2D" unique_id=1999595215]
 script = ExtResource("1_l3hxl")
@@ -66,11 +102,11 @@ position = Vector2(0, 11)
 texture = ExtResource("3_fk6ea")
 script = ExtResource("4_6axyl")
 
-[node name="Mouth" type="Sprite2D" parent="Head/Head" unique_id=772036259]
+[node name="Mouth" type="AnimatedSprite2D" parent="Head/Head" unique_id=1597293353]
 unique_name_in_owner = true
 position = Vector2(0, 38)
-texture = ExtResource("4_x7une")
-script = ExtResource("4_6axyl")
+sprite_frames = SubResource("SpriteFrames_gwkry")
+script = ExtResource("11_c3sxv")
 
 [node name="EarR" type="Sprite2D" parent="Head/Head" unique_id=304324198]
 unique_name_in_owner = true

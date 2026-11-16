@@ -12,6 +12,7 @@ Pick a character out of a shifty lineup
   - Load lineup (they walk in)
   - Shift the light between the suspects (they react to the scrutiny)
   - Pick a suspect based on a profile (Score)
+  - Repeat a phrase ("Give me the keys, you fucking cocksucker!")
   - Do it over again
 
 - Mouth
@@ -19,6 +20,27 @@ Pick a character out of a shifty lineup
 - Effects
   - Twitch
   - Blushing / Whitening
+
+### Mechanics
+
+- Eyebrows
+  - Height
+  - Angle
+- Sweat
+  - Particles (explosive raindrop-shapes)
+- Breathing
+  - Frequency
+  - Amplitude
+  - Breathing affects upper torso
+    - split Upper/lower torso.
+- Mouth
+  - Emojis
+    - Neutral
+    - Grimace
+    - Smile
+    - Frown
+  - Talking
+    - 
 
 ### Assets
 
