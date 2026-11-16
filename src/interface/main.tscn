@@ -67,19 +67,19 @@ position = Vector2(-309, 101)
 
 [node name="Character4" parent="Suspects" unique_id=28385294 instance=ExtResource("2_rfu3d")]
 unique_name_in_owner = true
-position = Vector2(-1104, 295)
+position = Vector2(-1162, 334)
 
 [node name="Character5" parent="Suspects" unique_id=1288583643 instance=ExtResource("2_rfu3d")]
 unique_name_in_owner = true
-position = Vector2(-1104, 295)
+position = Vector2(-967, 151)
 
 [node name="Character6" parent="Suspects" unique_id=476701915 instance=ExtResource("2_rfu3d")]
 unique_name_in_owner = true
-position = Vector2(-1104, 295)
+position = Vector2(-1366, 169)
 
 [node name="Character7" parent="Suspects" unique_id=1540449432 instance=ExtResource("2_rfu3d")]
 unique_name_in_owner = true
-position = Vector2(-1104, 295)
+position = Vector2(-892, 415)
 
 [node name="DetectiveRoom" type="Node2D" parent="." unique_id=1439157779]
 
@@ -127,6 +127,12 @@ grow_vertical = 2
 texture = ExtResource("4_dyb18")
 stretch_mode = 1
 metadata/_edit_lock_ = true
+
+[node name="Detective" parent="DetectiveRoom" unique_id=1764024577 instance=ExtResource("2_rfu3d")]
+unique_name_in_owner = true
+modulate = Color(1, 1, 1, 0.3019608)
+position = Vector2(292, 268.99997)
+scale = Vector2(1.72, 1.72)
 
 [node name="WallBottom" type="TextureRect" parent="DetectiveRoom" unique_id=1614852558]
 texture_filter = 3

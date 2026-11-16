@@ -19,14 +19,14 @@ extends Node2D
 
 var part: CanvasItem
 
-var target_pos: Vector2
+var target_pos: Vector2 = Vector2.INF
 var bob_tween: Tween
 
 func _process(delta: float) -> void:
 	eye_r.focal_point = get_global_mouse_position()
 	eye_l.focal_point = get_global_mouse_position()
 	
-	if (target_pos != global_position):
+	if (target_pos != Vector2.INF and target_pos != global_position):
 		self.global_position = global_position.move_toward(target_pos, delta * walk_speed)
 	elif bob_tween != null:
 		_stop_bob()
