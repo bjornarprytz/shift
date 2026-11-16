@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="Profile" format=3 uid="uid://caqvja5hn0eyv"]
+
+[ext_resource type="Script" uid="uid://dpdtdmp3x1vf5" path="res://system/profile.gd" id="1_8tfco"]
+[ext_resource type="Script" uid="uid://dssgm41f4i7vy" path="res://system/tell.gd" id="2_fvpwr"]
+
+[resource]
+script = ExtResource("1_8tfco")
+suspect_name = "Ronny"
+hair_color = Color(0.5035148, 0.4629863, 0.0862497, 1)
+skin_color = Color(0.59607846, 0.3647059, 0.3647059, 1)
+eye_color = Color(0.0049299365, 0.22879669, 0.9999997, 1)
+metadata/_custom_type_script = "uid://dpdtdmp3x1vf5"

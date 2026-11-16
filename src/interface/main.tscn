@@ -1,7 +1,9 @@
 [gd_scene format=3 uid="uid://cgrejd4v5ywd3"]
 
 [ext_resource type="Script" uid="uid://736gp2f48fi7" path="res://interface/main.gd" id="1_loxbi"]
+[ext_resource type="Texture2D" uid="uid://cldc5j0of2ebi" path="res://assets/img/background_lineup.png" id="2_8pnea"]
 [ext_resource type="PackedScene" uid="uid://ceptal4ijvbvi" path="res://interface/suspect.tscn" id="2_rfu3d"]
+[ext_resource type="Texture2D" uid="uid://bm5c5ijvmgakx" path="res://assets/img/wall-tile.png" id="4_dyb18"]
 
 [node name="Main" type="Node2D" unique_id=199121168]
 script = ExtResource("1_loxbi")
@@ -12,28 +14,141 @@ script = ExtResource("1_loxbi")
 offset_right = 926.0
 offset_bottom = 44.0
 
-[node name="Character" parent="." unique_id=1999595215 instance=ExtResource("2_rfu3d")]
-position = Vector2(-646, 130)
+[node name="Background" type="TextureRect" parent="." unique_id=1850055676]
+texture_filter = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -16.0
+offset_top = -18.0
+offset_right = 1297.0
+offset_bottom = 483.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_8pnea")
+stretch_mode = 1
 
-[node name="Character2" parent="." unique_id=6904838 instance=ExtResource("2_rfu3d")]
-position = Vector2(-425, 122)
+[node name="LineupPos" type="Node2D" parent="." unique_id=692191331]
 
-[node name="Character3" parent="." unique_id=526597295 instance=ExtResource("2_rfu3d")]
-position = Vector2(-223, 120)
+[node name="SuspectPos" type="Node2D" parent="LineupPos" unique_id=915520473]
+position = Vector2(186, 481)
 
-[node name="Character4" parent="." unique_id=28385294 instance=ExtResource("2_rfu3d")]
-position = Vector2(-978, 388)
+[node name="SuspectPos2" type="Node2D" parent="LineupPos" unique_id=2138909803]
+position = Vector2(336, 481)
 
-[node name="SuspectPos" type="Node2D" parent="." unique_id=915520473]
-position = Vector2(128, 481)
+[node name="SuspectPos3" type="Node2D" parent="LineupPos" unique_id=133676228]
+position = Vector2(486, 481)
 
-[node name="SuspectPos2" type="Node2D" parent="." unique_id=1842261313]
-position = Vector2(348, 481)
+[node name="SuspectPos4" type="Node2D" parent="LineupPos" unique_id=880317577]
+position = Vector2(636, 481)
 
-[node name="SuspectPos3" type="Node2D" parent="." unique_id=916098514]
-position = Vector2(586, 481)
+[node name="SuspectPos5" type="Node2D" parent="LineupPos" unique_id=330121167]
+position = Vector2(786, 481)
 
-[node name="SuspectPos4" type="Node2D" parent="." unique_id=506876304]
-position = Vector2(873, 481)
+[node name="SuspectPos6" type="Node2D" parent="LineupPos" unique_id=20528889]
+position = Vector2(936, 481)
+
+[node name="SuspectPos7" type="Node2D" parent="LineupPos" unique_id=1659452097]
+position = Vector2(1086, 481)
+
+[node name="Suspects" type="Node2D" parent="." unique_id=1479798815]
+
+[node name="Character" parent="Suspects" unique_id=1999595215 instance=ExtResource("2_rfu3d")]
+unique_name_in_owner = true
+position = Vector2(-772, 37)
+
+[node name="Character2" parent="Suspects" unique_id=6904838 instance=ExtResource("2_rfu3d")]
+unique_name_in_owner = true
+position = Vector2(-551, 29)
+
+[node name="Character3" parent="Suspects" unique_id=526597295 instance=ExtResource("2_rfu3d")]
+unique_name_in_owner = true
+position = Vector2(-309, 101)
+
+[node name="Character4" parent="Suspects" unique_id=28385294 instance=ExtResource("2_rfu3d")]
+unique_name_in_owner = true
+position = Vector2(-1104, 295)
+
+[node name="Character5" parent="Suspects" unique_id=1288583643 instance=ExtResource("2_rfu3d")]
+unique_name_in_owner = true
+position = Vector2(-1104, 295)
+
+[node name="Character6" parent="Suspects" unique_id=476701915 instance=ExtResource("2_rfu3d")]
+unique_name_in_owner = true
+position = Vector2(-1104, 295)
+
+[node name="Character7" parent="Suspects" unique_id=1540449432 instance=ExtResource("2_rfu3d")]
+unique_name_in_owner = true
+position = Vector2(-1104, 295)
+
+[node name="DetectiveRoom" type="Node2D" parent="." unique_id=1439157779]
+
+[node name="WallLeft" type="TextureRect" parent="DetectiveRoom" unique_id=301172711]
+texture_filter = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -16.0
+offset_top = -18.0
+offset_right = 64.0
+offset_bottom = 748.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_dyb18")
+stretch_mode = 1
+metadata/_edit_lock_ = true
+
+[node name="WallRight" type="TextureRect" parent="DetectiveRoom" unique_id=124891343]
+texture_filter = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1220.0
+offset_top = -18.0
+offset_right = 1302.0
+offset_bottom = 748.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_dyb18")
+stretch_mode = 1
+metadata/_edit_lock_ = true
+
+[node name="WallTop" type="TextureRect" parent="DetectiveRoom" unique_id=75091938]
+texture_filter = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -16.0
+offset_top = -18.0
+offset_right = 1306.0
+offset_bottom = 97.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_dyb18")
+stretch_mode = 1
+metadata/_edit_lock_ = true
+
+[node name="WallBottom" type="TextureRect" parent="DetectiveRoom" unique_id=1614852558]
+texture_filter = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -16.0
+offset_top = 523.0
+offset_right = 1306.0
+offset_bottom = 764.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_dyb18")
+stretch_mode = 1
+metadata/_edit_lock_ = true
+
+[node name="Window" type="ColorRect" parent="DetectiveRoom" unique_id=1886969717]
+offset_left = 63.0
+offset_top = 97.0
+offset_right = 1220.0
+offset_bottom = 521.0
+color = Color(0.3764706, 0.3764706, 0.3764706, 0.28235295)
+metadata/_edit_lock_ = true
 
 [connection signal="text_submitted" from="CanvasLayer/LineEdit" to="." method="_on_line_edit_text_submitted"]

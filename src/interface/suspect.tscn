@@ -106,6 +106,7 @@ script = ExtResource("4_6axyl")
 unique_name_in_owner = true
 position = Vector2(0, 38)
 sprite_frames = SubResource("SpriteFrames_gwkry")
+frame = 2
 script = ExtResource("11_c3sxv")
 
 [node name="EarR" type="Sprite2D" parent="Head/Head" unique_id=304324198]
