@@ -1,0 +1,59 @@
+[gd_scene format=3 uid="uid://401m82415u77"]
+
+[ext_resource type="Script" uid="uid://d2ld8o721lvgh" path="res://interface/body.gd" id="1_mf5h4"]
+[ext_resource type="Texture2D" uid="uid://c2jnbtcs4d71a" path="res://assets/img/eye.png" id="1_vqd80"]
+
+[node name="Body" type="Node2D" unique_id=1825212997]
+script = ExtResource("1_mf5h4")
+
+[node name="Neck" type="ColorRect" parent="." unique_id=556696610]
+unique_name_in_owner = true
+offset_left = 16.0
+offset_top = -18.0
+offset_right = 34.0
+offset_bottom = 23.0
+
+[node name="Torso" type="ColorRect" parent="." unique_id=950394824]
+unique_name_in_owner = true
+offset_right = 54.0
+offset_bottom = 100.0
+color = Color(0.16470589, 0.43137255, 0.6666667, 1)
+
+[node name="ArmR" type="ColorRect" parent="Torso" unique_id=487214747]
+layout_mode = 0
+offset_left = 54.0
+offset_right = 129.0
+offset_bottom = 22.0
+rotation = 1.2252014
+color = Color(0.16470589, 0.43137255, 0.6666667, 1)
+
+[node name="HandR" type="Sprite2D" parent="Torso/ArmR" unique_id=259743160]
+unique_name_in_owner = true
+show_behind_parent = true
+position = Vector2(74.367256, 11.895742)
+rotation = -1.2252014
+scale = Vector2(0.49999905, 0.68750095)
+texture = ExtResource("1_vqd80")
+
+[node name="ArmL" type="ColorRect" parent="Torso" unique_id=1502567907]
+layout_mode = 0
+offset_left = -29.0
+offset_top = 70.0
+offset_right = 46.0
+offset_bottom = 92.0
+rotation = -1.1889019
+color = Color(0.16470589, 0.43137255, 0.6666667, 1)
+
+[node name="HandL" type="Sprite2D" parent="Torso/ArmL" unique_id=2071221840]
+unique_name_in_owner = true
+show_behind_parent = true
+position = Vector2(2.043937, 11.866856)
+rotation = 1.3170906
+scale = Vector2(0.49999908, 0.687501)
+texture = ExtResource("1_vqd80")
+
+[node name="Legs" type="ColorRect" parent="." unique_id=235730536]
+offset_top = 100.0
+offset_right = 54.0
+offset_bottom = 200.0
+color = Color(0.19013184, 0.19013187, 0.19013187, 1)

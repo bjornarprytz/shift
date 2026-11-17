@@ -12,11 +12,9 @@ Pick a character out of a shifty lineup
   - Load lineup (they walk in)
   - Shift the light between the suspects (they react to the scrutiny)
   - Pick a suspect based on a profile (Score)
-  - Repeat a phrase ("Give me the keys, you fucking cocksucker!")
+  - Repeat a phrase ("Hand me the keys, you cocksucker!")
   - Do it over again
 
-- Mouth
-  - Talking animations
 - Effects
   - Twitch
   - Blushing / Whitening
@@ -28,11 +26,6 @@ Pick a character out of a shifty lineup
   - Angle
 - Sweat
   - Particles (explosive raindrop-shapes)
-- Breathing
-  - Frequency
-  - Amplitude
-  - Breathing affects upper torso
-    - split Upper/lower torso.
 - Mouth
   - Emojis
     - Neutral
@@ -40,7 +33,7 @@ Pick a character out of a shifty lineup
     - Smile
     - Frown
   - Talking
-    - 
+    - Polish enounciating mouths
 
 ### Assets
 

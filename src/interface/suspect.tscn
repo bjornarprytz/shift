@@ -1,161 +1,30 @@
 [gd_scene format=3 uid="uid://ceptal4ijvbvi"]
 
 [ext_resource type="Script" uid="uid://dum5fde158akc" path="res://interface/suspect.gd" id="1_l3hxl"]
-[ext_resource type="Texture2D" uid="uid://7bjw36ptbm4r" path="res://assets/img/head.png" id="2_15caw"]
-[ext_resource type="Texture2D" uid="uid://b3a7vhdw6tqqv" path="res://assets/img/nose.png" id="3_fk6ea"]
-[ext_resource type="Texture2D" uid="uid://wr201aj6pigx" path="res://assets/img/ear_r.png" id="3_u27fx"]
-[ext_resource type="Script" uid="uid://dxa2eotmwf04p" path="res://interface/face_part.gd" id="4_6axyl"]
-[ext_resource type="Texture2D" uid="uid://bt5uibsmtlvm5" path="res://assets/img/mouth_a.png" id="5_yoc2o"]
-[ext_resource type="Texture2D" uid="uid://dtro171okh4nt" path="res://assets/img/mouth_e.png" id="6_c3sxv"]
-[ext_resource type="PackedScene" uid="uid://cdrefvkg7grrb" path="res://interface/eye.tscn" id="6_ry35b"]
-[ext_resource type="Texture2D" uid="uid://bgsibp7cqg5d4" path="res://assets/img/mouth_f.png" id="7_t8iyd"]
-[ext_resource type="Texture2D" uid="uid://1bnyvxu12jup" path="res://assets/img/mouth_i.png" id="8_p6wng"]
-[ext_resource type="Texture2D" uid="uid://bk8xebiqa67qn" path="res://assets/img/hair.png" id="8_ry35b"]
-[ext_resource type="Texture2D" uid="uid://cjyfpk8rlssbf" path="res://assets/img/mouth_o.png" id="9_60fgq"]
-[ext_resource type="Texture2D" uid="uid://kr38vs1mjmip" path="res://assets/img/mouth_y.png" id="10_dqdch"]
-[ext_resource type="Script" uid="uid://bltjl5hdj7u3c" path="res://interface/mouth.gd" id="11_c3sxv"]
-[ext_resource type="Texture2D" uid="uid://b80dcltnbi8up" path="res://assets/img/mouth_m.png" id="11_t8iyd"]
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_gwkry"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("5_yoc2o")
-}, {
-"duration": 1.0,
-"texture": ExtResource("6_c3sxv")
-}, {
-"duration": 1.0,
-"texture": ExtResource("7_t8iyd")
-}, {
-"duration": 1.0,
-"texture": ExtResource("8_p6wng")
-}, {
-"duration": 1.0,
-"texture": ExtResource("9_60fgq")
-}, {
-"duration": 1.0,
-"texture": ExtResource("10_dqdch")
-}, {
-"duration": 1.0,
-"texture": ExtResource("11_t8iyd")
-}],
-"loop": 1,
-"name": &"default",
-"speed": 5.0
-}]
+[ext_resource type="PackedScene" uid="uid://401m82415u77" path="res://interface/body.tscn" id="2_p6wng"]
+[ext_resource type="PackedScene" uid="uid://cvteitlb0lvqu" path="res://interface/head.tscn" id="3_bn58s"]
 
 [node name="Suspect" type="Node2D" unique_id=1999595215]
 script = ExtResource("1_l3hxl")
 
-[node name="Body" type="Node2D" parent="." unique_id=580880312]
+[node name="Body" parent="." unique_id=1825212997 instance=ExtResource("2_p6wng")]
 unique_name_in_owner = true
 
-[node name="Neck" type="ColorRect" parent="Body" unique_id=1256003101]
-offset_left = 60.0
-offset_top = 130.0
-offset_right = 78.0
-offset_bottom = 171.0
-
-[node name="Torso" type="ColorRect" parent="Body" unique_id=7995264]
-offset_left = 44.0
-offset_top = 148.0
-offset_right = 98.0
-offset_bottom = 248.0
-color = Color(0.16470589, 0.43137255, 0.6666667, 1)
-
-[node name="Legs" type="ColorRect" parent="Body" unique_id=817816446]
-offset_left = 44.0
-offset_top = 248.0
-offset_right = 98.0
-offset_bottom = 348.0
-color = Color(0.19013184, 0.19013187, 0.19013187, 1)
-
-[node name="ArmR" type="ColorRect" parent="Body" unique_id=507321820]
-offset_left = 98.0
-offset_top = 148.0
-offset_right = 173.0
-offset_bottom = 170.0
-rotation = 1.2252014
-color = Color(0.16470589, 0.43137255, 0.6666667, 1)
-
-[node name="ArmL" type="ColorRect" parent="Body" unique_id=138839835]
-offset_left = 19.0
-offset_top = 220.00002
-offset_right = 94.0
-offset_bottom = 242.00002
-rotation = -1.3170906
-color = Color(0.16470589, 0.43137255, 0.6666667, 1)
-
-[node name="Head" type="Node2D" parent="." unique_id=407186953]
+[node name="Head" parent="." unique_id=1211529537 instance=ExtResource("3_bn58s")]
 unique_name_in_owner = true
-
-[node name="Head" type="Sprite2D" parent="Head" unique_id=1166561222]
-modulate = Color(0.72176814, 0.3683803, 0.14154443, 1)
-texture_filter = 3
-position = Vector2(69, 74)
-texture = ExtResource("2_15caw")
-
-[node name="Nose" type="Sprite2D" parent="Head/Head" unique_id=846883998]
-unique_name_in_owner = true
-position = Vector2(0, 11)
-texture = ExtResource("3_fk6ea")
-script = ExtResource("4_6axyl")
-
-[node name="Mouth" type="AnimatedSprite2D" parent="Head/Head" unique_id=1597293353]
-unique_name_in_owner = true
-position = Vector2(0, 38)
-sprite_frames = SubResource("SpriteFrames_gwkry")
-frame = 2
-script = ExtResource("11_c3sxv")
-
-[node name="EarR" type="Sprite2D" parent="Head/Head" unique_id=304324198]
-unique_name_in_owner = true
-texture_filter = 3
-position = Vector2(62, -6)
-texture = ExtResource("3_u27fx")
-script = ExtResource("4_6axyl")
-
-[node name="EarL" type="Sprite2D" parent="Head/Head" unique_id=705175089]
-unique_name_in_owner = true
-texture_filter = 3
-position = Vector2(-62, -6)
-texture = ExtResource("3_u27fx")
-flip_h = true
-script = ExtResource("4_6axyl")
-
-[node name="Eyes" type="Node2D" parent="Head" unique_id=733678508]
-position = Vector2(0, 9)
-
-[node name="EyeR" parent="Head/Eyes" unique_id=1449849314 instance=ExtResource("6_ry35b")]
-unique_name_in_owner = true
-position = Vector2(90, 59)
-
-[node name="EyeL" parent="Head/Eyes" unique_id=110510116 instance=ExtResource("6_ry35b")]
-unique_name_in_owner = true
-position = Vector2(46, 59)
-is_left_eye = true
-
-[node name="BlinkTimer" type="Timer" parent="Head/Eyes" unique_id=97424028]
-unique_name_in_owner = true
-autostart = true
-
-[node name="Hair" type="Sprite2D" parent="Head" unique_id=1584257992]
-texture_filter = 3
-position = Vector2(62, -9)
-texture = ExtResource("8_ry35b")
+position = Vector2(-44, -149)
 
 [node name="WalkAnchor" type="Node2D" parent="." unique_id=1246086625]
 unique_name_in_owner = true
-position = Vector2(72, 347)
+position = Vector2(26, 199)
 
 [node name="Control" type="Control" parent="." unique_id=1045583950]
 layout_mode = 3
 anchors_preset = 0
-offset_left = -8.0
-offset_right = 148.0
-offset_bottom = 358.0
+offset_left = -49.0
+offset_top = -154.0
+offset_right = 107.0
+offset_bottom = 204.0
 
-[connection signal="timeout" from="Head/Eyes/BlinkTimer" to="." method="_on_blink_timer_timeout"]
 [connection signal="mouse_entered" from="Control" to="." method="_on_control_mouse_entered"]
 [connection signal="mouse_exited" from="Control" to="." method="_on_control_mouse_exited"]

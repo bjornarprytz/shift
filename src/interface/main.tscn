@@ -131,7 +131,7 @@ metadata/_edit_lock_ = true
 [node name="Detective" parent="DetectiveRoom" unique_id=1764024577 instance=ExtResource("2_rfu3d")]
 unique_name_in_owner = true
 modulate = Color(1, 1, 1, 0.3019608)
-position = Vector2(292, 268.99997)
+position = Vector2(518, 461)
 scale = Vector2(1.72, 1.72)
 
 [node name="WallBottom" type="TextureRect" parent="DetectiveRoom" unique_id=1614852558]
@@ -140,14 +140,13 @@ anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = -16.0
-offset_top = 523.0
+offset_top = 451.0
 offset_right = 1306.0
 offset_bottom = 764.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("4_dyb18")
 stretch_mode = 1
-metadata/_edit_lock_ = true
 
 [node name="Window" type="ColorRect" parent="DetectiveRoom" unique_id=1886969717]
 offset_left = 63.0

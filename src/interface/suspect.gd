@@ -3,18 +3,10 @@ extends Node2D
 
 @export var suspect_name: String = ["J", "S", "D", "G", "C", "L"].pick_random()
 @export var walk_speed: float = 400.0
+@export var profile: Profile = Profile.new()
 
-@onready var eye_r: Eye = %EyeR
-@onready var eye_l: Eye = %EyeL
-
-@onready var nose: FacePart = %Nose
-@onready var mouth: Mouth = %Mouth
-@onready var ear_r: FacePart = %EarR
-@onready var ear_l: FacePart = %EarL
-@onready var blink_timer: Timer = %BlinkTimer
-
-@onready var body: Node2D = %Body
-@onready var head: Node2D = %Head
+@onready var body: Body = %Body
+@onready var head: Head = %Head
 @onready var walk_anchor: Node2D = %WalkAnchor
 
 var part: CanvasItem
@@ -22,9 +14,14 @@ var part: CanvasItem
 var target_pos: Vector2 = Vector2.INF
 var bob_tween: Tween
 
+func _ready() -> void:
+	head.set_skintone(profile.skin_color)
+	body.set_skintone(profile.skin_color)
+	
+	body.set_breath(1.0, 4.0, 2.0, 2.0)
+
 func _process(delta: float) -> void:
-	eye_r.focal_point = get_global_mouse_position()
-	eye_l.focal_point = get_global_mouse_position()
+	head.set_focal_point(get_global_mouse_position())
 	
 	if (target_pos != Vector2.INF and target_pos != global_position):
 		self.global_position = global_position.move_toward(target_pos, delta * walk_speed)
@@ -40,17 +37,6 @@ func _on_control_mouse_entered() -> void:
 
 func _on_control_mouse_exited() -> void:
 	renerve()
-
-func say(phrase: String):
-	phrase = phrase.strip_edges()
-	var length = phrase.length()
-	if (length == 0):
-		return
-	var clip_length = 5000 #ms
-	var per_letter_length:float = (clip_length / length) / 1000.0
-	for l in phrase:
-		mouth.enounciate(l)
-		await get_tree().create_timer(per_letter_length).timeout
 
 func walk_to(target_global: Vector2):
 	var bob_height := 10.0
@@ -74,33 +60,8 @@ func walk_to(target_global: Vector2):
 	bob_tween.play()
 	
 
-func blink() -> void:
-	var closing_phase_duration = randf_range(.05, .1)
-	var opening_phase_duration = randf_range(.15, .3)
-	
-	var tween = create_tween()
-	
-	tween.set_parallel()
-	for e in [eye_l, eye_r]:
-		tween.tween_property(e, "lid_gap_upper", 0.0, closing_phase_duration)
-		tween.tween_property(e, "lid_gap_lower", 0.0, closing_phase_duration)
-	
-	tween.set_parallel(false)
-	
-	for e in [eye_l, eye_r]:	
-		tween.tween_property(e, "lid_gap_upper", e.lid_gap_upper, opening_phase_duration)
-		tween.set_parallel()
-		tween.tween_property(e, "lid_gap_lower", e.lid_gap_lower, opening_phase_duration)
-		
-	await tween.finished
-
 func unnerve() -> void:
 	pass
 
 func renerve() -> void:
 	pass
-
-func _on_blink_timer_timeout() -> void:
-	await blink()
-	blink_timer.wait_time = randf_range(2.0, 10.0)
-	blink_timer.start()
