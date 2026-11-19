@@ -12,13 +12,15 @@ extends Node2D
 var focal_point: Vector2
 var lid_gap_upper: float = randf_range(2.0, 10.0)
 var lid_gap_lower: float = randf_range(2.0, 10.0)
-var brow_angle: float
+
+var brow_angle: float = 15.0
+var brow_height: float = 24.0
 
 var field_of_view: float = 200.0
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	brow.flip_v = is_left_eye
+	brow.flip_h = is_left_eye
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -45,7 +47,8 @@ func _set_lids():
 	lower_lid.position.y = lid_gap_lower + pupil.position.y
 
 func _align_brow():
-	pass
+	brow.position = Vector2.UP * brow_height
+	brow.rotation_degrees = brow_angle * (-1 if is_left_eye else 1)
 
 
 func _get_eyeball_radius() -> float:

@@ -1,0 +1,33 @@
+[gd_resource type="Resource" script_class="Appearance" format=3 uid="uid://c6b57keyak0y5"]
+
+[ext_resource type="Texture2D" uid="uid://wr201aj6pigx" path="res://assets/img/ear_1.png" id="1_3ioy8"]
+[ext_resource type="Script" uid="uid://dn6pvfgh7rjnu" path="res://system/appearance.gd" id="1_jm2jt"]
+[ext_resource type="Texture2D" uid="uid://b3a7vhdw6tqqv" path="res://assets/img/nose_1.png" id="2_2p40l"]
+[ext_resource type="Texture2D" uid="uid://yxvwthqdub0e" path="res://assets/img/brow_1.png" id="2_18i7s"]
+[ext_resource type="Texture2D" uid="uid://cgydyjuw031fa" path="res://assets/img/ear_2.png" id="2_qyiot"]
+[ext_resource type="Texture2D" uid="uid://byhaxabr3bpce" path="res://assets/img/hair_1_back.png" id="3_2q62p"]
+[ext_resource type="Texture2D" uid="uid://p5l5h6kepi1q" path="res://assets/img/ear_3.png" id="3_uign1"]
+[ext_resource type="Texture2D" uid="uid://c1woypewq4bc8" path="res://assets/img/hair_2_back.png" id="4_fnwdn"]
+[ext_resource type="Texture2D" uid="uid://bq4mvtgiq00oi" path="res://assets/img/brow_2.png" id="5_0bl3u"]
+[ext_resource type="Texture2D" uid="uid://0kuv5b272vol" path="res://assets/img/hair_3_back.png" id="5_j178g"]
+[ext_resource type="Texture2D" uid="uid://dkrn3xmm5tcbl" path="res://assets/img/brow_3.png" id="6_u688u"]
+[ext_resource type="Texture2D" uid="uid://dkoyx1hv4tvcb" path="res://assets/img/hair_4_back.png" id="6_yor7t"]
+[ext_resource type="Texture2D" uid="uid://bcjqbtxkapr18" path="res://assets/img/brow_4.png" id="7_krg4l"]
+[ext_resource type="Texture2D" uid="uid://b8dnibtrcil2c" path="res://assets/img/hair_5_back.png" id="7_qyiot"]
+[ext_resource type="Texture2D" uid="uid://bk8xebiqa67qn" path="res://assets/img/hair_1_front.png" id="8_uign1"]
+[ext_resource type="Texture2D" uid="uid://drsr5hhsg3u6" path="res://assets/img/hair_2_front.png" id="9_0bl3u"]
+[ext_resource type="Texture2D" uid="uid://y182xechug7c" path="res://assets/img/hair_3_front.png" id="10_u688u"]
+[ext_resource type="Texture2D" uid="uid://cmqwhfkg12dmf" path="res://assets/img/hair_4_front.png" id="11_krg4l"]
+[ext_resource type="Texture2D" uid="uid://dshfg4bejc3gw" path="res://assets/img/hair_5_front.png" id="12_grx6x"]
+[ext_resource type="Texture2D" uid="uid://jnj0b54ndv04" path="res://assets/img/nose_2.png" id="19_u688u"]
+[ext_resource type="Texture2D" uid="uid://b3dssy2faoin1" path="res://assets/img/nose_3.png" id="20_krg4l"]
+[ext_resource type="Texture2D" uid="uid://b8pipfm80uqmw" path="res://assets/img/nose_4.png" id="21_grx6x"]
+
+[resource]
+script = ExtResource("1_jm2jt")
+eyebrows = Array[Texture2D]([ExtResource("2_18i7s"), ExtResource("5_0bl3u"), ExtResource("6_u688u"), ExtResource("7_krg4l")])
+hair_styles_front = Array[Texture2D]([ExtResource("8_uign1"), ExtResource("9_0bl3u"), ExtResource("10_u688u"), ExtResource("11_krg4l"), ExtResource("12_grx6x")])
+hair_styles_back = Array[Texture2D]([ExtResource("3_2q62p"), ExtResource("4_fnwdn"), ExtResource("5_j178g"), ExtResource("6_yor7t"), ExtResource("7_qyiot")])
+ears = Array[Texture2D]([ExtResource("1_3ioy8"), ExtResource("2_qyiot"), ExtResource("3_uign1")])
+noses = Array[Texture2D]([ExtResource("2_2p40l"), ExtResource("19_u688u"), ExtResource("20_krg4l"), ExtResource("21_grx6x")])
+metadata/_custom_type_script = "uid://dn6pvfgh7rjnu"

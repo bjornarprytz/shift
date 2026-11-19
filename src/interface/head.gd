@@ -1,7 +1,8 @@
 class_name Head
 extends Node2D
 
-@onready var head: Sprite2D = %Head
+@onready var bare_skin = [%Head, %Nose, %EarL, %EarR]
+@onready var hair: Sprite2D = %Hair
 
 @onready var eye_r: Eye = %EyeR
 @onready var eye_l: Eye = %EyeL
@@ -13,7 +14,11 @@ extends Node2D
 @onready var blink_timer: Timer = %BlinkTimer
 
 func set_skintone(color: Color):
-	head.modulate = color
+	for s in bare_skin:
+		s.modulate = color
+
+func set_hair_color(color: Color):
+	hair.modulate = color
 
 func set_focal_point(point: Vector2):
 	eye_r.focal_point = point

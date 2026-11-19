@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://7bjw36ptbm4r" path="res://assets/img/head.png" id="1_jihge"]
 [ext_resource type="Script" uid="uid://ykpdfyegy7qn" path="res://interface/head.gd" id="1_xqv0v"]
-[ext_resource type="Texture2D" uid="uid://b3a7vhdw6tqqv" path="res://assets/img/nose.png" id="2_xqv0v"]
+[ext_resource type="Texture2D" uid="uid://b3a7vhdw6tqqv" path="res://assets/img/nose_1.png" id="2_xqv0v"]
 [ext_resource type="Script" uid="uid://dxa2eotmwf04p" path="res://interface/face_part.gd" id="3_dm2nd"]
 [ext_resource type="Texture2D" uid="uid://bt5uibsmtlvm5" path="res://assets/img/mouth_a.png" id="4_aoua1"]
 [ext_resource type="Texture2D" uid="uid://dtro171okh4nt" path="res://assets/img/mouth_e.png" id="5_yc5a3"]
@@ -12,9 +12,9 @@
 [ext_resource type="Texture2D" uid="uid://kr38vs1mjmip" path="res://assets/img/mouth_y.png" id="9_57pg6"]
 [ext_resource type="Texture2D" uid="uid://b80dcltnbi8up" path="res://assets/img/mouth_m.png" id="10_qjmjv"]
 [ext_resource type="Script" uid="uid://bltjl5hdj7u3c" path="res://interface/mouth.gd" id="11_ixfgt"]
-[ext_resource type="Texture2D" uid="uid://wr201aj6pigx" path="res://assets/img/ear_r.png" id="12_icn7e"]
+[ext_resource type="Texture2D" uid="uid://wr201aj6pigx" path="res://assets/img/ear_1.png" id="12_icn7e"]
 [ext_resource type="PackedScene" uid="uid://cdrefvkg7grrb" path="res://interface/eye.tscn" id="13_cdgoc"]
-[ext_resource type="Texture2D" uid="uid://bk8xebiqa67qn" path="res://assets/img/hair.png" id="14_csm5m"]
+[ext_resource type="Texture2D" uid="uid://y182xechug7c" path="res://assets/img/hair_3_front.png" id="15_xqv0v"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_gwkry"]
 animations = [{
@@ -46,6 +46,7 @@ animations = [{
 }]
 
 [node name="Head" type="Node2D" unique_id=1211529537]
+texture_filter = 3
 script = ExtResource("1_xqv0v")
 
 [node name="Head" type="Sprite2D" parent="." unique_id=2050438477]
@@ -55,30 +56,33 @@ texture_filter = 3
 position = Vector2(69, 74)
 texture = ExtResource("1_jihge")
 
-[node name="Nose" type="Sprite2D" parent="Head" unique_id=865731493]
+[node name="Mouth" type="AnimatedSprite2D" parent="." unique_id=540497518]
 unique_name_in_owner = true
-position = Vector2(0, 11)
-texture = ExtResource("2_xqv0v")
-script = ExtResource("3_dm2nd")
-
-[node name="Mouth" type="AnimatedSprite2D" parent="Head" unique_id=540497518]
-unique_name_in_owner = true
-position = Vector2(0, 38)
+position = Vector2(69, 112)
 sprite_frames = SubResource("SpriteFrames_gwkry")
 frame = 2
 script = ExtResource("11_ixfgt")
 
-[node name="EarR" type="Sprite2D" parent="Head" unique_id=1351620777]
+[node name="Nose" type="Sprite2D" parent="." unique_id=865731493]
 unique_name_in_owner = true
+modulate = Color(0.72156864, 0.36862746, 0.14117648, 1)
+position = Vector2(69, 85)
+texture = ExtResource("2_xqv0v")
+script = ExtResource("3_dm2nd")
+
+[node name="EarR" type="Sprite2D" parent="." unique_id=1351620777]
+unique_name_in_owner = true
+modulate = Color(0.72156864, 0.36862746, 0.14117648, 1)
 texture_filter = 3
-position = Vector2(62, -6)
+position = Vector2(131, 68)
 texture = ExtResource("12_icn7e")
 script = ExtResource("3_dm2nd")
 
-[node name="EarL" type="Sprite2D" parent="Head" unique_id=1127784099]
+[node name="EarL" type="Sprite2D" parent="." unique_id=1127784099]
 unique_name_in_owner = true
+modulate = Color(0.72156864, 0.36862746, 0.14117648, 1)
 texture_filter = 3
-position = Vector2(-62, -6)
+position = Vector2(7, 68)
 texture = ExtResource("12_icn7e")
 flip_h = true
 script = ExtResource("3_dm2nd")
@@ -100,8 +104,10 @@ unique_name_in_owner = true
 autostart = true
 
 [node name="Hair" type="Sprite2D" parent="." unique_id=18838439]
+unique_name_in_owner = true
+modulate = Color(0.3254902, 1, 0.3019608, 1)
 texture_filter = 3
-position = Vector2(62, -9)
-texture = ExtResource("14_csm5m")
+position = Vector2(69, 36)
+texture = ExtResource("15_xqv0v")
 
 [connection signal="timeout" from="Eyes/BlinkTimer" to="." method="_on_blink_timer_timeout"]

@@ -21,38 +21,27 @@ Pick a character out of a shifty lineup
 
 ### Mechanics
 
+- Random appearance
+
 - Eyebrows
   - Height
   - Angle
 - Sweat
   - Particles (explosive raindrop-shapes)
+
+### Assets
+
+- Buttons
+  - Speak
+  - Spotlight
+- Sweat drops
 - Mouth
+  - Polish enounciating mouths
   - Emojis
     - Neutral
     - Grimace
     - Smile
     - Frown
-  - Talking
-    - Polish enounciating mouths
-
-### Assets
-
-- Head
-  - 3 variations
-- Eyebrows
-  - 4 variations
-- Mouth
-  - 3 variations
-  - Animations
-- Hair
-  - 5 variations
-- Ears
-  - 3 variations
-- Node
-  - 5 variations
-- "Witness booth"
-  - Glass "reflection" showing player character
-- Lineup background
 
 - Push release with `./scripts/push_release.sh`
 

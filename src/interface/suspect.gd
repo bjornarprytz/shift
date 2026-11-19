@@ -38,6 +38,9 @@ func _on_control_mouse_entered() -> void:
 func _on_control_mouse_exited() -> void:
 	renerve()
 
+func say(phrase: String):
+	head.say(phrase)
+
 func walk_to(target_global: Vector2):
 	var bob_height := 10.0
 	var walk_vector = target_global - walk_anchor.global_position
