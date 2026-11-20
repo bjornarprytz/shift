@@ -7,9 +7,9 @@ extends Node2D
 
 var breath_tween: Tween
 
-func set_skintone(color: Color):
+func apply_appearance(appearance: Appearance):
 	for s in bare_skin:
-		s.modulate = color
+		s.modulate = appearance.skin_color
 
 func set_breath(speed: float, magnitude: float, interval: float, irregularity: float=0.0):
 	assert (speed > 0.0 and magnitude > 0.0 and irregularity >= 0.0)

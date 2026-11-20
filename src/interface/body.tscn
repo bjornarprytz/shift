@@ -8,15 +8,17 @@ script = ExtResource("1_mf5h4")
 
 [node name="Neck" type="ColorRect" parent="." unique_id=556696610]
 unique_name_in_owner = true
-offset_left = 16.0
-offset_top = -18.0
-offset_right = 34.0
-offset_bottom = 23.0
+offset_left = -10.0
+offset_top = -218.0
+offset_right = 8.0
+offset_bottom = -177.0
 
 [node name="Torso" type="ColorRect" parent="." unique_id=950394824]
 unique_name_in_owner = true
-offset_right = 54.0
-offset_bottom = 100.0
+offset_left = -26.0
+offset_top = -200.0
+offset_right = 28.0
+offset_bottom = -100.0
 color = Color(0.16470589, 0.43137255, 0.6666667, 1)
 
 [node name="ArmR" type="ColorRect" parent="Torso" unique_id=487214747]
@@ -53,7 +55,7 @@ scale = Vector2(0.49999908, 0.687501)
 texture = ExtResource("1_vqd80")
 
 [node name="Legs" type="ColorRect" parent="." unique_id=235730536]
-offset_top = 100.0
-offset_right = 54.0
-offset_bottom = 200.0
+offset_left = -26.0
+offset_top = -100.0
+offset_right = 28.0
 color = Color(0.19013184, 0.19013187, 0.19013187, 1)

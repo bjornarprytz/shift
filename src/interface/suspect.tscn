@@ -12,19 +12,15 @@ unique_name_in_owner = true
 
 [node name="Head" parent="." unique_id=1211529537 instance=ExtResource("3_bn58s")]
 unique_name_in_owner = true
-position = Vector2(-44, -149)
-
-[node name="WalkAnchor" type="Node2D" parent="." unique_id=1246086625]
-unique_name_in_owner = true
-position = Vector2(26, 199)
+position = Vector2(-69, -349)
 
 [node name="Control" type="Control" parent="." unique_id=1045583950]
 layout_mode = 3
 anchors_preset = 0
-offset_left = -49.0
-offset_top = -154.0
-offset_right = 107.0
-offset_bottom = 204.0
+offset_left = -73.0
+offset_top = -355.0
+offset_right = 83.0
+offset_bottom = 3.0
 
 [connection signal="mouse_entered" from="Control" to="." method="_on_control_mouse_entered"]
 [connection signal="mouse_exited" from="Control" to="." method="_on_control_mouse_exited"]

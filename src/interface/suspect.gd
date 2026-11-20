@@ -7,7 +7,6 @@ extends Node2D
 
 @onready var body: Body = %Body
 @onready var head: Head = %Head
-@onready var walk_anchor: Node2D = %WalkAnchor
 
 var part: CanvasItem
 
@@ -15,10 +14,12 @@ var target_pos: Vector2 = Vector2.INF
 var bob_tween: Tween
 
 func _ready() -> void:
-	head.set_skintone(profile.skin_color)
-	body.set_skintone(profile.skin_color)
-	
 	body.set_breath(1.0, 4.0, 2.0, 2.0)
+
+func apply_appearance(appearance: Appearance):
+	profile.appearance = appearance
+	head.apply_appearance(profile.appearance)
+	body.apply_appearance(profile.appearance)
 
 func _process(delta: float) -> void:
 	head.set_focal_point(get_global_mouse_position())
@@ -43,7 +44,7 @@ func say(phrase: String):
 
 func walk_to(target_global: Vector2):
 	var bob_height := 10.0
-	var walk_vector = target_global - walk_anchor.global_position
+	var walk_vector = target_global - global_position
 	var offset = randf_range(0.01, 0.2)
 	
 	if (walk_vector.length() == 0):

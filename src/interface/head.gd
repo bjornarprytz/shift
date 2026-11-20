@@ -13,12 +13,16 @@ extends Node2D
 @onready var ear_l: FacePart = %EarL
 @onready var blink_timer: Timer = %BlinkTimer
 
-func set_skintone(color: Color):
+func apply_appearance(appearance: Appearance):
 	for s in bare_skin:
-		s.modulate = color
-
-func set_hair_color(color: Color):
-	hair.modulate = color
+		s.modulate = appearance.skin_color
+	hair.modulate = appearance.hair_color
+	hair.texture = appearance.hair_style_front
+	ear_l.texture = appearance.ear
+	ear_r.texture = appearance.ear
+	nose.texture = appearance.nose
+	eye_r.apply_appearance(appearance)
+	eye_l.apply_appearance(appearance)
 
 func set_focal_point(point: Vector2):
 	eye_r.focal_point = point

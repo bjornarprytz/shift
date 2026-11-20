@@ -18,11 +18,16 @@ var brow_height: float = 24.0
 
 var field_of_view: float = 200.0
 
-# Called when the node enters the scene tree for the first time.
+func apply_appearance(appearance: Appearance):
+	pupil.modulate = appearance.eye_color
+	upper_lid.modulate = appearance.skin_color
+	lower_lid.modulate = appearance.skin_color
+	brow.modulate = appearance.hair_color
+	brow.texture = appearance.eyebrows
+
 func _ready() -> void:
 	brow.flip_h = is_left_eye
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	_place_pupil()
 	_set_lids()

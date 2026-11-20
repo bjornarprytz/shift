@@ -2,10 +2,8 @@ class_name Profile
 extends Resource
 
 @export var suspect_name: String
-@export var hair_color: Color
-@export var skin_color: Color = Color.CORAL
-@export var eye_color: Color 
-@export var height: float
+
+@export var appearance: Appearance
 
 @export var tells: Array[Tell] = []
 

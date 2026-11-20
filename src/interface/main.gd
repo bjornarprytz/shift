@@ -1,13 +1,29 @@
 extends Node2D
 
+@onready var suspect_factory = preload("res://interface/suspect.tscn")
+
+@export var suspect_count: int = 7
+@export var character_variations: AppearanceVariations
+
 @onready var suspects: Node2D = $Suspects
 @onready var lineup_pos: Node2D = $LineupPos
+@onready var detective: Suspect = %Detective
+
+func _load_suspects() -> Array[Suspect]:
+	var s: Array[Suspect] = []
+	
+	for c in range(suspect_count):
+		var new_sus = suspect_factory.instantiate() as Suspect
+		suspects.add_child(new_sus)
+		new_sus.apply_appearance(character_variations.create_random_appearance())
+		s.push_back(new_sus)
+	
+	return s
 
 func _get_suspects() -> Array[Suspect]:
 	var s: Array[Suspect] = []
-	
 	for c in suspects.get_children():
-		assert(c is Suspect)
+		assert (c is Suspect)
 		s.push_back(c)
 	return s
 
@@ -19,8 +35,11 @@ func _get_lineup_pos() -> Array[Node2D]:
 	return p
 
 func _ready() -> void:
+	detective.apply_appearance(character_variations.create_random_appearance())
 	var pos = _get_lineup_pos()
-	var sus = _get_suspects()
+	var sus = _load_suspects()
+	
+	await get_tree().process_frame
 	
 	for s in sus:
 		var p = pos.pop_front()
