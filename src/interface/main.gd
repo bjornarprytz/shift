@@ -8,6 +8,10 @@ extends Node2D
 @onready var suspects: Node2D = $Suspects
 @onready var lineup_pos: Node2D = $LineupPos
 @onready var detective: Suspect = %Detective
+@onready var detective_back: SuspectBack = %DetectiveBack
+
+@onready var detective_target_pos: Node2D = %Detective_target_pos
+@onready var detective_back_target_pos: Node2D = %DetectiveBack_target_pos
 
 func _load_suspects() -> Array[Suspect]:
 	var s: Array[Suspect] = []
@@ -35,15 +39,8 @@ func _get_lineup_pos() -> Array[Node2D]:
 	return p
 
 func _ready() -> void:
-	detective.apply_appearance(character_variations.create_random_appearance())
-	var pos = _get_lineup_pos()
-	var sus = _load_suspects()
+	_load_suspects()
 	
-	await get_tree().process_frame
-	
-	for s in sus:
-		var p = pos.pop_front()
-		s.walk_to(p.global_position)
 
 func _on_left_button_pressed() -> void:
 	print("Pressed left button")
@@ -57,3 +54,20 @@ func _on_button_mouse_entered(source: Control) -> void:
 func _on_line_edit_text_submitted(new_text: String) -> void:
 	for c in _get_suspects():
 		c.say(new_text)
+
+func _on_character_creation_appearance_selected(appearance: Appearance) -> void:
+	detective.apply_appearance(appearance)
+	detective_back.apply_appearance(appearance)
+	_action_scene()
+
+func _suspects_enter():
+	var pos = _get_lineup_pos()
+	var sus = _get_suspects()
+	
+	for s in sus:
+		var p = pos.pop_front()
+		s.walk_to(p.global_position)
+
+func _action_scene():
+	detective.walk_to(detective_target_pos.global_position)
+	detective_back.walk_to(detective_back_target_pos.global_position)

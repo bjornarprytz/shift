@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://bjjo17a3usjs6"]
+
+[ext_resource type="Script" uid="uid://bcimc4xj360c0" path="res://interface/suspect_back.gd" id="1_neli8"]
+[ext_resource type="PackedScene" uid="uid://401m82415u77" path="res://interface/body.tscn" id="2_ppdun"]
+[ext_resource type="PackedScene" uid="uid://clfreojaih40k" path="res://interface/head_back.tscn" id="3_t7i0p"]
+
+[node name="BackOfSuspect" type="Node2D" unique_id=1999595215]
+script = ExtResource("1_neli8")
+
+[node name="Body" parent="." unique_id=1825212997 instance=ExtResource("2_ppdun")]
+unique_name_in_owner = true
+
+[node name="Head" parent="." unique_id=54004329 instance=ExtResource("3_t7i0p")]
+unique_name_in_owner = true
+position = Vector2(0, -274)

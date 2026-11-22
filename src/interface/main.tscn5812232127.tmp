@@ -1,0 +1,155 @@
+[gd_scene format=3 uid="uid://cgrejd4v5ywd3"]
+
+[ext_resource type="Script" uid="uid://736gp2f48fi7" path="res://interface/main.gd" id="1_loxbi"]
+[ext_resource type="Texture2D" uid="uid://cldc5j0of2ebi" path="res://assets/img/background_lineup.png" id="2_8pnea"]
+[ext_resource type="Resource" uid="uid://c6b57keyak0y5" path="res://data/appearance_variations.tres" id="2_l14rc"]
+[ext_resource type="PackedScene" uid="uid://ceptal4ijvbvi" path="res://interface/suspect.tscn" id="2_rfu3d"]
+[ext_resource type="PackedScene" uid="uid://cy3hql7hrfrm5" path="res://interface/character_creation.tscn" id="3_spusx"]
+[ext_resource type="Texture2D" uid="uid://bm5c5ijvmgakx" path="res://assets/img/wall-tile.png" id="4_dyb18"]
+[ext_resource type="Script" uid="uid://dpdtdmp3x1vf5" path="res://system/profile.gd" id="6_rirh5"]
+[ext_resource type="Script" uid="uid://dssgm41f4i7vy" path="res://system/tell.gd" id="7_spusx"]
+[ext_resource type="PackedScene" uid="uid://bjjo17a3usjs6" path="res://interface/detective.tscn" id="9_d0hba"]
+
+[sub_resource type="Resource" id="Resource_l14rc"]
+script = ExtResource("6_rirh5")
+metadata/_custom_type_script = "uid://dpdtdmp3x1vf5"
+
+[node name="Main" type="Node2D" unique_id=199121168]
+script = ExtResource("1_loxbi")
+character_variations = ExtResource("2_l14rc")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=657149999]
+
+[node name="LineEdit" type="LineEdit" parent="CanvasLayer" unique_id=330073287]
+offset_right = 926.0
+offset_bottom = 44.0
+
+[node name="CharacterCreation" parent="CanvasLayer" unique_id=1914878429 instance=ExtResource("3_spusx")]
+visible = false
+
+[node name="Background" type="TextureRect" parent="." unique_id=1850055676]
+texture_filter = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -16.0
+offset_top = -18.0
+offset_right = 1297.0
+offset_bottom = 483.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_8pnea")
+stretch_mode = 1
+
+[node name="LineupPos" type="Node2D" parent="." unique_id=692191331]
+
+[node name="SuspectPos" type="Node2D" parent="LineupPos" unique_id=915520473]
+position = Vector2(186, 481)
+
+[node name="SuspectPos2" type="Node2D" parent="LineupPos" unique_id=2138909803]
+position = Vector2(336, 481)
+
+[node name="SuspectPos3" type="Node2D" parent="LineupPos" unique_id=133676228]
+position = Vector2(486, 481)
+
+[node name="SuspectPos4" type="Node2D" parent="LineupPos" unique_id=880317577]
+position = Vector2(636, 481)
+
+[node name="SuspectPos5" type="Node2D" parent="LineupPos" unique_id=330121167]
+position = Vector2(786, 481)
+
+[node name="SuspectPos6" type="Node2D" parent="LineupPos" unique_id=20528889]
+position = Vector2(936, 481)
+
+[node name="SuspectPos7" type="Node2D" parent="LineupPos" unique_id=1659452097]
+position = Vector2(1086, 481)
+
+[node name="Suspects" type="Node2D" parent="." unique_id=1479798815]
+
+[node name="DetectiveRoom" type="Node2D" parent="." unique_id=1439157779]
+
+[node name="WallLeft" type="TextureRect" parent="DetectiveRoom" unique_id=301172711]
+texture_filter = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -16.0
+offset_top = -18.0
+offset_right = 64.0
+offset_bottom = 748.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_dyb18")
+stretch_mode = 1
+metadata/_edit_lock_ = true
+
+[node name="WallRight" type="TextureRect" parent="DetectiveRoom" unique_id=124891343]
+texture_filter = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1220.0
+offset_top = -18.0
+offset_right = 1302.0
+offset_bottom = 748.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_dyb18")
+stretch_mode = 1
+metadata/_edit_lock_ = true
+
+[node name="WallTop" type="TextureRect" parent="DetectiveRoom" unique_id=75091938]
+texture_filter = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -16.0
+offset_top = -18.0
+offset_right = 1306.0
+offset_bottom = 97.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_dyb18")
+stretch_mode = 1
+metadata/_edit_lock_ = true
+
+[node name="Detective_target_pos" type="Node2D" parent="DetectiveRoom" unique_id=815131624]
+position = Vector2(490, 791)
+scale = Vector2(1.72, 1.72)
+
+[node name="Detective" parent="DetectiveRoom" unique_id=1764024577 instance=ExtResource("2_rfu3d")]
+unique_name_in_owner = true
+modulate = Color(1, 1, 1, 0.3019608)
+position = Vector2(484.00012, 793.99994)
+scale = Vector2(1.72, 1.72)
+suspect_name = "Detective"
+profile = SubResource("Resource_l14rc")
+
+[node name="WallBottom" type="TextureRect" parent="DetectiveRoom" unique_id=1614852558]
+texture_filter = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -16.0
+offset_top = 451.0
+offset_right = 1306.0
+offset_bottom = 764.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_dyb18")
+stretch_mode = 1
+
+[node name="Window" type="ColorRect" parent="DetectiveRoom" unique_id=1886969717]
+offset_left = 63.0
+offset_top = 97.0
+offset_right = 1220.0
+offset_bottom = 521.0
+color = Color(0.3764706, 0.3764706, 0.3764706, 0.28235295)
+metadata/_edit_lock_ = true
+
+[node name="Suspect" parent="DetectiveRoom" unique_id=1999595215 instance=ExtResource("9_d0hba")]
+position = Vector2(195, 1005)
+scale = Vector2(2, 2)
+
+[connection signal="text_submitted" from="CanvasLayer/LineEdit" to="." method="_on_line_edit_text_submitted"]
+[connection signal="appearance_selected" from="CanvasLayer/CharacterCreation" to="." method="_on_character_creation_appearance_selected"]

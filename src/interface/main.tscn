@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://bm5c5ijvmgakx" path="res://assets/img/wall-tile.png" id="4_dyb18"]
 [ext_resource type="Script" uid="uid://dpdtdmp3x1vf5" path="res://system/profile.gd" id="6_rirh5"]
 [ext_resource type="Script" uid="uid://dssgm41f4i7vy" path="res://system/tell.gd" id="7_spusx"]
+[ext_resource type="PackedScene" uid="uid://bjjo17a3usjs6" path="res://interface/suspect_back.tscn" id="9_d0hba"]
 
 [sub_resource type="Resource" id="Resource_l14rc"]
 script = ExtResource("6_rirh5")
@@ -23,7 +24,7 @@ character_variations = ExtResource("2_l14rc")
 offset_right = 926.0
 offset_bottom = 44.0
 
-[node name="PanelContainer" parent="CanvasLayer" unique_id=1914878429 instance=ExtResource("3_spusx")]
+[node name="CharacterCreation" parent="CanvasLayer" unique_id=1914878429 instance=ExtResource("3_spusx")]
 
 [node name="Background" type="TextureRect" parent="." unique_id=1850055676]
 texture_filter = 3
@@ -111,10 +112,15 @@ texture = ExtResource("4_dyb18")
 stretch_mode = 1
 metadata/_edit_lock_ = true
 
+[node name="Detective_target_pos" type="Node2D" parent="DetectiveRoom" unique_id=815131624]
+unique_name_in_owner = true
+position = Vector2(490, 791)
+scale = Vector2(1.72, 1.72)
+
 [node name="Detective" parent="DetectiveRoom" unique_id=1764024577 instance=ExtResource("2_rfu3d")]
 unique_name_in_owner = true
 modulate = Color(1, 1, 1, 0.3019608)
-position = Vector2(490, 791)
+position = Vector2(-454, 793.99994)
 scale = Vector2(1.72, 1.72)
 suspect_name = "Detective"
 profile = SubResource("Resource_l14rc")
@@ -141,4 +147,15 @@ offset_bottom = 521.0
 color = Color(0.3764706, 0.3764706, 0.3764706, 0.28235295)
 metadata/_edit_lock_ = true
 
+[node name="DetectiveBack_target_pos" type="Node2D" parent="DetectiveRoom" unique_id=856791579]
+unique_name_in_owner = true
+position = Vector2(340, 1055)
+scale = Vector2(2, 2)
+
+[node name="DetectiveBack" parent="DetectiveRoom" unique_id=1999595215 instance=ExtResource("9_d0hba")]
+unique_name_in_owner = true
+position = Vector2(-683, 1055)
+scale = Vector2(2, 2)
+
 [connection signal="text_submitted" from="CanvasLayer/LineEdit" to="." method="_on_line_edit_text_submitted"]
+[connection signal="appearance_selected" from="CanvasLayer/CharacterCreation" to="." method="_on_character_creation_appearance_selected"]

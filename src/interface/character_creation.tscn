@@ -51,7 +51,11 @@ layout_mode = 2
 [node name="RandomizeButton" type="Button" parent="VBoxContainer/HBoxContainer" unique_id=1593056446]
 layout_mode = 2
 size_flags_horizontal = 3
-text = "Shift appearance"
+text = "Shift appearance?"
+
+[node name="Control" type="Control" parent="VBoxContainer/HBoxContainer" unique_id=213483371]
+custom_minimum_size = Vector2(30, 0)
+layout_mode = 2
 
 [node name="ConfirmButton" type="Button" parent="VBoxContainer/HBoxContainer" unique_id=337177013]
 layout_mode = 2
@@ -60,4 +64,4 @@ text = "Start shift!"
 
 [connection signal="selection_changed" from="VBoxContainer/HBoxContainer2/Preview" to="." method="_on_preview_selection_changed"]
 [connection signal="pressed" from="VBoxContainer/HBoxContainer/RandomizeButton" to="." method="_on_button_pressed"]
-[connection signal="pressed" from="VBoxContainer/HBoxContainer/ConfirmButton" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/ConfirmButton" to="." method="_on_confirm_button_pressed"]

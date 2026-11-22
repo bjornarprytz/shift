@@ -62,7 +62,6 @@ func walk_to(target_global: Vector2):
 	bob_tween.set_parallel(true)
 	bob_tween.tween_property(head, "position:y", bob_height, 0.1).as_relative()
 	bob_tween.play()
-	
 
 func unnerve() -> void:
 	pass

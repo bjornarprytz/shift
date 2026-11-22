@@ -21,6 +21,9 @@ Pick a character out of a shifty lineup
 
 ### Mechanics
 
+- Bring in the suspects
+- Darken lineup room (to allow for lighting)
+
 - Sweat
   - Particles (explosive raindrop-shapes)
 - Mouth
@@ -32,6 +35,8 @@ Pick a character out of a shifty lineup
 
 ### Assets
 
+- Sweat drop
+- Spotlight
 
 - Push release with `./scripts/push_release.sh`
 

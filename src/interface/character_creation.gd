@@ -1,10 +1,6 @@
 extends PanelContainer
 
-enum Selection {
-	Hair,
-	Ears,
-	Nose
-}
+signal appearance_selected(appearance: Appearance)
 
 @onready var preview: HeadPreview = %Preview
 @export var variations: AppearanceVariations
@@ -15,8 +11,11 @@ func _ready() -> void:
 	_randomize_appearance()
 
 func _on_preview_selection_changed(selection: String) -> void:
-	pass # Replace with function body.
+	print("Not in use. Random is better than selection")
 
+func _on_confirm_button_pressed() -> void:
+	appearance_selected.emit(appearance)
+	hide()
 
 func _on_button_pressed() -> void:
 	_randomize_appearance()
