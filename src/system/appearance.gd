@@ -9,5 +9,11 @@ extends Resource
 
 @export var skin_color: Color
 @export var hair_color: Color
-@export var eye_color: Color
 @export var height_variation: float
+
+@export var eye_color: Color
+@export var eye_slit_gap_l: float
+@export var eye_slit_gap_r: float = -1.0
+
+@export var brow_angle: float
+@export var brow_height: float

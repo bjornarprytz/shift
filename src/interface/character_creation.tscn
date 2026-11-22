@@ -4,59 +4,12 @@
 [ext_resource type="Resource" uid="uid://c6b57keyak0y5" path="res://data/appearance_variations.tres" id="2_iq216"]
 [ext_resource type="PackedScene" uid="uid://cliu67y55wo56" path="res://interface/head_preview.tscn" id="2_pvti2"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_iq216"]
-content_margin_left = 45.0
-content_margin_top = 35.0
-content_margin_right = 45.0
-content_margin_bottom = 35.0
-bg_color = Color(0.12879494, 0.35218704, 0.23310772, 1)
-border_width_left = 4
-border_width_top = 4
-border_width_right = 4
-border_width_bottom = 4
-border_color = Color(0.9607843, 0.8352941, 0.2784314, 1)
-corner_radius_top_left = 5
-corner_radius_top_right = 5
-corner_radius_bottom_right = 5
-corner_radius_bottom_left = 5
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2fusv"]
-content_margin_left = 45.0
-content_margin_top = 35.0
-content_margin_right = 45.0
-content_margin_bottom = 35.0
-bg_color = Color(0.09397691, 0.27474058, 0.17644635, 1)
-border_width_left = 4
-border_width_top = 4
-border_width_right = 4
-border_width_bottom = 4
-border_color = Color(0.9607843, 0.8352941, 0.2784314, 1)
-corner_radius_top_left = 5
-corner_radius_top_right = 5
-corner_radius_bottom_right = 5
-corner_radius_bottom_left = 5
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1ub05"]
-content_margin_left = 45.0
-content_margin_top = 35.0
-content_margin_right = 45.0
-content_margin_bottom = 35.0
-bg_color = Color(0.17051503, 0.44334155, 0.29491726, 1)
-border_width_left = 4
-border_width_top = 4
-border_width_right = 4
-border_width_bottom = 4
-border_color = Color(0.9607843, 0.8352941, 0.2784314, 1)
-corner_radius_top_left = 5
-corner_radius_top_right = 5
-corner_radius_bottom_right = 5
-corner_radius_bottom_left = 5
-
 [node name="PanelContainer" type="PanelContainer" unique_id=1914878429]
+self_modulate = Color(1, 1, 1, 0.654902)
 offset_left = 208.0
 offset_top = 56.0
 offset_right = 1072.0
-offset_bottom = 707.0
+offset_bottom = 669.0
 script = ExtResource("1_pvti2")
 variations = ExtResource("2_iq216")
 
@@ -84,7 +37,7 @@ size_flags_horizontal = 3
 
 [node name="Preview" parent="VBoxContainer/HBoxContainer2" unique_id=1432773387 instance=ExtResource("2_pvti2")]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(400, 500)
+custom_minimum_size = Vector2(280, 350)
 layout_mode = 2
 
 [node name="Control3" type="Control" parent="VBoxContainer/HBoxContainer2" unique_id=1369202513]
@@ -98,14 +51,12 @@ layout_mode = 2
 [node name="RandomizeButton" type="Button" parent="VBoxContainer/HBoxContainer" unique_id=1593056446]
 layout_mode = 2
 size_flags_horizontal = 3
-theme_override_styles/normal = SubResource("StyleBoxFlat_iq216")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_2fusv")
-theme_override_styles/hover = SubResource("StyleBoxFlat_1ub05")
-text = "Randomize"
+text = "Shift appearance"
 
 [node name="ConfirmButton" type="Button" parent="VBoxContainer/HBoxContainer" unique_id=337177013]
 layout_mode = 2
-text = "OK"
+theme_type_variation = &"Primary_Button"
+text = "Start shift!"
 
 [connection signal="selection_changed" from="VBoxContainer/HBoxContainer2/Preview" to="." method="_on_preview_selection_changed"]
 [connection signal="pressed" from="VBoxContainer/HBoxContainer/RandomizeButton" to="." method="_on_button_pressed"]

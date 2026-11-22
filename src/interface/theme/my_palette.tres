@@ -4,4 +4,6 @@
 
 [resource]
 script = ExtResource("1_bf7oi")
+primary = Color(0, 0.49350363, 0.34672, 1)
+secondary = Color(0.19523376, 0.45508605, 0.9736541, 1)
 metadata/_custom_type_script = "uid://5jicefe1v0qo"

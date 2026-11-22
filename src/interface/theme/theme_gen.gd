@@ -8,9 +8,8 @@ func setup():
 	set_save_path("res://interface/theme/global_theme.tres")
 
 
-var button_color = palette.primary
-var button_hover_color = button_color.darkened(0.1)
-var button_pressed_color = button_color.darkened(0.15)
+var button_color = palette.secondary
+var button_primary_color = palette.primary
 var button_border_color = palette.accent
 var default_border_width = 4 
 var default_corner_radius = 5
@@ -39,11 +38,23 @@ func define_theme():
 	})
 
 	var button_hover_style = inherit(button_style, {
-		bg_color = button_hover_color
+		bg_color = button_color.darkened(.1)
 	})
 
 	var button_pressed_style = inherit(button_style, {
-		bg_color = button_pressed_color
+		bg_color = button_color.darkened(.15)
+	})
+	
+	var button_primary_style = inherit(button_style, {
+		bg_color = button_primary_color
+	})
+	
+	var button_primary_hover_style = inherit(button_style, {
+		bg_color = button_primary_color.darkened(.1)
+	})
+
+	var button_primary_pressed_style = inherit(button_style, {
+		bg_color = button_primary_color.darkened(.15)
 	})
 	
 	define_style("PanelContainer", {
@@ -61,6 +72,12 @@ func define_theme():
 		normal = button_style,
 		hover = button_hover_style,
 		pressed = button_pressed_style,
+	})
+	
+	define_variant_style("Primary_Button", "Button", {
+		normal = button_primary_style,
+		hover = button_primary_hover_style,
+		pressed = button_primary_pressed_style,
 	})
 	
 	define_variant_style("Title", "RichTextLabel", {

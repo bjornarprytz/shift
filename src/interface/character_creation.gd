@@ -22,5 +22,6 @@ func _on_button_pressed() -> void:
 	_randomize_appearance()
 
 func _randomize_appearance():
+	await preview.juice()
 	appearance = variations.create_random_appearance()
 	preview.apply_appearance(appearance)

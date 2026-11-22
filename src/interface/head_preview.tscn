@@ -12,8 +12,8 @@ script = ExtResource("1_e2dtp")
 
 [node name="Head" parent="." unique_id=1211529537 instance=ExtResource("1_3csnv")]
 unique_name_in_owner = true
-position = Vector2(196, 253)
-scale = Vector2(3, 3)
+position = Vector2(141, 172)
+scale = Vector2(2, 2)
 
 [node name="HairSelect" type="ColorRect" parent="Head" unique_id=1409459059]
 unique_name_in_owner = true

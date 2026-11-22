@@ -24,6 +24,11 @@ func create_random_appearance() -> Appearance:
 	a.hair_color = hair_colors.pick_random()
 	a.eye_color = eye_colors.pick_random()
 	a.skin_color = skin_colors.pick_random()
+	a.eye_slit_gap_l = randf_range(2.0, 10.0)
+	a.eye_slit_gap_r = randf_range(2.0, 10.0)
+	
+	a.brow_angle = randf_range(-15.0, 15.0)
+	a.brow_height = randf_range(15.0, 30.0)
 	
 	return a
 	

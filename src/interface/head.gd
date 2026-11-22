@@ -33,7 +33,7 @@ func say(phrase: String):
 	var length = phrase.length()
 	if (length == 0):
 		return
-	var clip_length = 5000 #ms
+	var clip_length = phrase.length() * 1000 #ms
 	var per_letter_length:float = (clip_length / length) / 1000.0
 	for l in phrase:
 		mouth.enounciate(l)

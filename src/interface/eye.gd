@@ -24,6 +24,15 @@ func apply_appearance(appearance: Appearance):
 	lower_lid.modulate = appearance.skin_color
 	brow.modulate = appearance.hair_color
 	brow.texture = appearance.eyebrows
+	if (appearance.eye_slit_gap_r > 0.0 && !is_left_eye):
+		lid_gap_lower = appearance.eye_slit_gap_r
+		lid_gap_upper = appearance.eye_slit_gap_r
+	else:
+		lid_gap_lower = appearance.eye_slit_gap_l
+		lid_gap_upper = appearance.eye_slit_gap_l
+	
+	brow_angle = appearance.brow_angle
+	brow_height = appearance.brow_height
 
 func _ready() -> void:
 	brow.flip_h = is_left_eye

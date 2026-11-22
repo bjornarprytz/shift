@@ -12,6 +12,14 @@ signal selection_changed(selection: String)
 
 var focus_tween: Tween
 
+func juice():
+	var tween = create_tween()
+	head.say("of")
+	tween.tween_property(head, "scale", Vector2.ONE * 0.25, .1).as_relative()
+	tween.tween_property(head, "scale", head.scale, .15)
+	
+	await tween.finished
+
 func apply_appearance(apperaance: Appearance):
 	head.apply_appearance(apperaance)
 

@@ -6,42 +6,32 @@ game on itch.io: [link](https://thewarlock.itch.io/shift)
 
 Pick a character out of a shifty lineup
 
-## TODO (nice-to-have)
+## TODO
 
 - Game loop
-  - Load lineup (they walk in)
   - Shift the light between the suspects (they react to the scrutiny)
   - Pick a suspect based on a profile (Score)
-  - Repeat a phrase ("Hand me the keys, you cocksucker!")
   - Do it over again
 
+- Mouth
+  - Talking animations
 - Effects
   - Twitch
   - Blushing / Whitening
 
 ### Mechanics
 
-- Random appearance
-
-- Eyebrows
-  - Height
-  - Angle
 - Sweat
   - Particles (explosive raindrop-shapes)
-
-### Assets
-
-- Buttons
-  - Speak
-  - Spotlight
-- Sweat drops
 - Mouth
-  - Polish enounciating mouths
   - Emojis
     - Neutral
     - Grimace
     - Smile
     - Frown
+
+### Assets
+
 
 - Push release with `./scripts/push_release.sh`
 
