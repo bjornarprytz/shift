@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://cldc5j0of2ebi" path="res://assets/img/background_lineup.png" id="2_8pnea"]
 [ext_resource type="Resource" uid="uid://c6b57keyak0y5" path="res://data/appearance_variations.tres" id="2_l14rc"]
 [ext_resource type="PackedScene" uid="uid://ceptal4ijvbvi" path="res://interface/suspect.tscn" id="2_rfu3d"]
+[ext_resource type="PackedScene" uid="uid://cy3hql7hrfrm5" path="res://interface/character_creation.tscn" id="3_spusx"]
 [ext_resource type="Texture2D" uid="uid://bm5c5ijvmgakx" path="res://assets/img/wall-tile.png" id="4_dyb18"]
 [ext_resource type="Script" uid="uid://dpdtdmp3x1vf5" path="res://system/profile.gd" id="6_rirh5"]
 [ext_resource type="Script" uid="uid://dssgm41f4i7vy" path="res://system/tell.gd" id="7_spusx"]
@@ -21,6 +22,8 @@ character_variations = ExtResource("2_l14rc")
 [node name="LineEdit" type="LineEdit" parent="CanvasLayer" unique_id=330073287]
 offset_right = 926.0
 offset_bottom = 44.0
+
+[node name="PanelContainer" parent="CanvasLayer" unique_id=1914878429 instance=ExtResource("3_spusx")]
 
 [node name="Background" type="TextureRect" parent="." unique_id=1850055676]
 texture_filter = 3

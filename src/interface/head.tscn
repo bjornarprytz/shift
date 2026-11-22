@@ -53,12 +53,12 @@ script = ExtResource("1_xqv0v")
 unique_name_in_owner = true
 modulate = Color(0.72176814, 0.3683803, 0.14154443, 1)
 texture_filter = 3
-position = Vector2(69, 74)
+position = Vector2(2, 6)
 texture = ExtResource("1_jihge")
 
 [node name="Mouth" type="AnimatedSprite2D" parent="." unique_id=540497518]
 unique_name_in_owner = true
-position = Vector2(69, 112)
+position = Vector2(2, 44)
 sprite_frames = SubResource("SpriteFrames_gwkry")
 frame = 2
 script = ExtResource("11_ixfgt")
@@ -66,7 +66,7 @@ script = ExtResource("11_ixfgt")
 [node name="Nose" type="Sprite2D" parent="." unique_id=865731493]
 unique_name_in_owner = true
 modulate = Color(0.72156864, 0.36862746, 0.14117648, 1)
-position = Vector2(69, 85)
+position = Vector2(2, 17)
 texture = ExtResource("2_xqv0v")
 script = ExtResource("3_dm2nd")
 
@@ -74,7 +74,7 @@ script = ExtResource("3_dm2nd")
 unique_name_in_owner = true
 modulate = Color(0.72156864, 0.36862746, 0.14117648, 1)
 texture_filter = 3
-position = Vector2(131, 68)
+position = Vector2(64, 0)
 texture = ExtResource("12_icn7e")
 script = ExtResource("3_dm2nd")
 
@@ -82,13 +82,13 @@ script = ExtResource("3_dm2nd")
 unique_name_in_owner = true
 modulate = Color(0.72156864, 0.36862746, 0.14117648, 1)
 texture_filter = 3
-position = Vector2(7, 68)
+position = Vector2(-60, 0)
 texture = ExtResource("12_icn7e")
 flip_h = true
 script = ExtResource("3_dm2nd")
 
 [node name="Eyes" type="Node2D" parent="." unique_id=1930801373]
-position = Vector2(0, 9)
+position = Vector2(-67, -59)
 
 [node name="EyeR" parent="Eyes" unique_id=1449849314 instance=ExtResource("13_cdgoc")]
 unique_name_in_owner = true
@@ -107,7 +107,7 @@ autostart = true
 unique_name_in_owner = true
 modulate = Color(0.3254902, 1, 0.3019608, 1)
 texture_filter = 3
-position = Vector2(69, 36)
+position = Vector2(2, -32)
 texture = ExtResource("15_xqv0v")
 
 [connection signal="timeout" from="Eyes/BlinkTimer" to="." method="_on_blink_timer_timeout"]

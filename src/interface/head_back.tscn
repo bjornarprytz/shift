@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://clfreojaih40k"]
+
+[ext_resource type="Script" uid="uid://dhvo241r8j5in" path="res://interface/head_back.gd" id="1_4u0gf"]
+[ext_resource type="Texture2D" uid="uid://7bjw36ptbm4r" path="res://assets/img/head.png" id="1_l4elc"]
+[ext_resource type="Texture2D" uid="uid://y182xechug7c" path="res://assets/img/hair_3_front.png" id="2_x45af"]
+
+[node name="HeadBack" type="Node2D" unique_id=54004329]
+script = ExtResource("1_4u0gf")
+
+[node name="Head" type="Sprite2D" parent="." unique_id=1949239465]
+unique_name_in_owner = true
+position = Vector2(0, -1)
+texture = ExtResource("1_l4elc")
+
+[node name="Hair" type="Sprite2D" parent="." unique_id=1161757873]
+unique_name_in_owner = true
+modulate = Color(0.3254902, 1, 0.3019608, 1)
+texture_filter = 3
+position = Vector2(2, -33)
+texture = ExtResource("2_x45af")

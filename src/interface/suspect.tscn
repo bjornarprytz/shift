@@ -12,7 +12,7 @@ unique_name_in_owner = true
 
 [node name="Head" parent="." unique_id=1211529537 instance=ExtResource("3_bn58s")]
 unique_name_in_owner = true
-position = Vector2(-69, -349)
+position = Vector2(-4, -281)
 
 [node name="Control" type="Control" parent="." unique_id=1045583950]
 layout_mode = 3

@@ -1,0 +1,65 @@
+[gd_scene format=3 uid="uid://cliu67y55wo56"]
+
+[ext_resource type="PackedScene" uid="uid://cvteitlb0lvqu" path="res://interface/head.tscn" id="1_3csnv"]
+[ext_resource type="Script" uid="uid://bpbi2uoqjs0rr" path="res://interface/head_preview.gd" id="1_e2dtp"]
+
+[node name="Preview" type="Control" unique_id=1432773387]
+custom_minimum_size = Vector2(45, 0)
+layout_mode = 3
+anchors_preset = 0
+size_flags_horizontal = 3
+script = ExtResource("1_e2dtp")
+
+[node name="Head" parent="." unique_id=1211529537 instance=ExtResource("1_3csnv")]
+unique_name_in_owner = true
+position = Vector2(196, 253)
+scale = Vector2(3, 3)
+
+[node name="HairSelect" type="ColorRect" parent="Head" unique_id=1409459059]
+unique_name_in_owner = true
+visible = false
+modulate = Color(1, 1, 1, 0)
+offset_left = -38.333336
+offset_top = -75.333336
+offset_right = 41.0
+offset_bottom = -16.333336
+
+[node name="EarSelect1" type="ColorRect" parent="Head" unique_id=1440859041]
+unique_name_in_owner = true
+visible = false
+modulate = Color(1, 1, 1, 0)
+offset_left = -70.66667
+offset_top = -19.333336
+offset_right = -47.333336
+offset_bottom = 25.0
+
+[node name="EarSelect2" type="ColorRect" parent="Head" unique_id=1527343637]
+unique_name_in_owner = true
+visible = false
+modulate = Color(1, 1, 1, 0)
+offset_left = 51.0
+offset_top = -19.333336
+offset_right = 71.33333
+offset_bottom = 25.0
+
+[node name="NoseSelect" type="ColorRect" parent="Head" unique_id=177670239]
+unique_name_in_owner = true
+visible = false
+modulate = Color(1, 1, 1, 0)
+offset_left = -12.000015
+offset_top = 10.333328
+offset_right = 12.6666565
+offset_bottom = 33.66667
+
+[connection signal="gui_input" from="Head/HairSelect" to="." method="_on_hair_select_gui_input"]
+[connection signal="mouse_entered" from="Head/HairSelect" to="." method="_on_hair_select_mouse_entered"]
+[connection signal="mouse_exited" from="Head/HairSelect" to="." method="_on_hair_select_mouse_exited"]
+[connection signal="gui_input" from="Head/EarSelect1" to="." method="_on_ear_select_gui_input"]
+[connection signal="mouse_entered" from="Head/EarSelect1" to="." method="_on_ear_select_mouse_entered"]
+[connection signal="mouse_exited" from="Head/EarSelect1" to="." method="_on_ear_select_mouse_exited"]
+[connection signal="gui_input" from="Head/EarSelect2" to="." method="_on_ear_select_gui_input"]
+[connection signal="mouse_entered" from="Head/EarSelect2" to="." method="_on_ear_select_mouse_entered"]
+[connection signal="mouse_exited" from="Head/EarSelect2" to="." method="_on_ear_select_mouse_exited"]
+[connection signal="gui_input" from="Head/NoseSelect" to="." method="_on_nose_select_gui_input"]
+[connection signal="mouse_entered" from="Head/NoseSelect" to="." method="_on_nose_select_mouse_entered"]
+[connection signal="mouse_exited" from="Head/NoseSelect" to="." method="_on_nose_select_mouse_exited"]
