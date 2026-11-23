@@ -21,11 +21,16 @@ Pick a character out of a shifty lineup
 
 ### Mechanics
 
-- Bring in the suspects
-- Darken lineup room (to allow for lighting)
+- Talking
+  - More mouths
+    - More accurate
+  - Talk
 
-- Sweat
-  - Particles (explosive raindrop-shapes)
+- Tells (per face part)
+  - Sweating (Particles (explosive raindrop-shapes))
+  - Twitching
+  - Blushing / Whitening
+
 - Mouth
   - Emojis
     - Neutral
@@ -36,7 +41,6 @@ Pick a character out of a shifty lineup
 ### Assets
 
 - Sweat drop
-- Spotlight
 
 - Push release with `./scripts/push_release.sh`
 
