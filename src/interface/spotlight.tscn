@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://nt5v8iqch6ay"]
+
+[ext_resource type="Texture2D" uid="uid://c2jnbtcs4d71a" path="res://assets/img/eye.png" id="1_h4nbb"]
+[ext_resource type="Script" uid="uid://by5wa0tart6lu" path="res://interface/spotlight.gd" id="2_4pfpj"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_gwkry"]
+radius = 146.12323
+
+[node name="Spotlight" type="PointLight2D" unique_id=1598887375]
+light_mask = 2
+texture_filter = 3
+texture = ExtResource("1_h4nbb")
+texture_scale = 9.25
+script = ExtResource("2_4pfpj")
+
+[node name="Area" type="Area2D" parent="." unique_id=48110713]
+
+[node name="Shape" type="CollisionShape2D" parent="Area" unique_id=101579093]
+shape = SubResource("CircleShape2D_gwkry")
+
+[connection signal="area_entered" from="Area" to="." method="_on_area_area_entered"]
+[connection signal="area_exited" from="Area" to="." method="_on_area_area_exited"]

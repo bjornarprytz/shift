@@ -1,11 +1,12 @@
 extends Node2D
 
 @onready var suspect_factory = preload("res://interface/suspect.tscn")
+@onready var spotlight: PointLight2D = %Spotlight
 
 @export var suspect_count: int = 7
 @export var character_variations: AppearanceVariations
 
-@onready var suspects: Node2D = $Suspects
+@onready var suspects: Node2D = %Suspects
 @onready var lineup_pos: Node2D = $LineupPos
 @onready var detective: Suspect = %Detective
 @onready var detective_back: SuspectBack = %DetectiveBack
@@ -13,14 +14,19 @@ extends Node2D
 @onready var detective_target_pos: Node2D = %Detective_target_pos
 @onready var detective_back_target_pos: Node2D = %DetectiveBack_target_pos
 
+func _process(delta: float) -> void:
+	spotlight.global_position = get_global_mouse_position()
+
 func _load_suspects() -> Array[Suspect]:
 	var s: Array[Suspect] = []
-	
+	var i = 0
 	for c in range(suspect_count):
 		var new_sus = suspect_factory.instantiate() as Suspect
 		suspects.add_child(new_sus)
+		new_sus.position = (Vector2.LEFT * 700) + (Vector2.LEFT * 150.0 * i) + (Vector2.DOWN * 500.0)
 		new_sus.apply_appearance(character_variations.create_random_appearance())
 		s.push_back(new_sus)
+		i += 1
 	
 	return s
 
@@ -71,5 +77,7 @@ func _suspects_enter():
 func _action_scene():
 	detective.walk_to(detective_target_pos.global_position,0.0)
 	detective_back.walk_to(detective_back_target_pos.global_position)
+	
+	_suspects_enter()
 	
 	

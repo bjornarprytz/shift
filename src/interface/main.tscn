@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://ceptal4ijvbvi" path="res://interface/suspect.tscn" id="2_rfu3d"]
 [ext_resource type="PackedScene" uid="uid://cy3hql7hrfrm5" path="res://interface/character_creation.tscn" id="3_spusx"]
 [ext_resource type="Texture2D" uid="uid://bm5c5ijvmgakx" path="res://assets/img/wall-tile.png" id="4_dyb18"]
+[ext_resource type="PackedScene" uid="uid://nt5v8iqch6ay" path="res://interface/spotlight.tscn" id="5_bab4p"]
 [ext_resource type="Script" uid="uid://dpdtdmp3x1vf5" path="res://system/profile.gd" id="6_rirh5"]
 [ext_resource type="Script" uid="uid://dssgm41f4i7vy" path="res://system/tell.gd" id="7_spusx"]
 [ext_resource type="PackedScene" uid="uid://bjjo17a3usjs6" path="res://interface/suspect_back.tscn" id="9_d0hba"]
@@ -27,6 +28,7 @@ offset_bottom = 44.0
 [node name="CharacterCreation" parent="CanvasLayer" unique_id=1914878429 instance=ExtResource("3_spusx")]
 
 [node name="Background" type="TextureRect" parent="." unique_id=1850055676]
+modulate = Color(0.49354547, 0.49354553, 0.49354553, 1)
 texture_filter = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -39,6 +41,14 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("2_8pnea")
 stretch_mode = 1
+
+[node name="Suspects" type="Node2D" parent="Background" unique_id=1479798815]
+unique_name_in_owner = true
+position = Vector2(16, 18)
+
+[node name="Spotlight" parent="Background" unique_id=1598887375 instance=ExtResource("5_bab4p")]
+unique_name_in_owner = true
+position = Vector2(141, 490)
 
 [node name="LineupPos" type="Node2D" parent="." unique_id=692191331]
 
@@ -63,11 +73,11 @@ position = Vector2(936, 481)
 [node name="SuspectPos7" type="Node2D" parent="LineupPos" unique_id=1659452097]
 position = Vector2(1086, 481)
 
-[node name="Suspects" type="Node2D" parent="." unique_id=1479798815]
-
 [node name="DetectiveRoom" type="Node2D" parent="." unique_id=1439157779]
+light_mask = 0
 
 [node name="WallLeft" type="TextureRect" parent="DetectiveRoom" unique_id=301172711]
+light_mask = 0
 texture_filter = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -83,6 +93,7 @@ stretch_mode = 1
 metadata/_edit_lock_ = true
 
 [node name="WallRight" type="TextureRect" parent="DetectiveRoom" unique_id=124891343]
+light_mask = 0
 texture_filter = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -98,6 +109,7 @@ stretch_mode = 1
 metadata/_edit_lock_ = true
 
 [node name="WallTop" type="TextureRect" parent="DetectiveRoom" unique_id=75091938]
+light_mask = 0
 texture_filter = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -114,7 +126,7 @@ metadata/_edit_lock_ = true
 
 [node name="Detective_target_pos" type="Node2D" parent="DetectiveRoom" unique_id=815131624]
 unique_name_in_owner = true
-position = Vector2(490, 791)
+position = Vector2(546, 791)
 scale = Vector2(1.72, 1.72)
 
 [node name="Detective" parent="DetectiveRoom" unique_id=1764024577 instance=ExtResource("2_rfu3d")]
@@ -126,6 +138,7 @@ suspect_name = "Detective"
 profile = SubResource("Resource_l14rc")
 
 [node name="WallBottom" type="TextureRect" parent="DetectiveRoom" unique_id=1614852558]
+light_mask = 0
 texture_filter = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -140,6 +153,7 @@ texture = ExtResource("4_dyb18")
 stretch_mode = 1
 
 [node name="Window" type="ColorRect" parent="DetectiveRoom" unique_id=1886969717]
+light_mask = 0
 offset_left = 63.0
 offset_top = 97.0
 offset_right = 1220.0
@@ -149,7 +163,7 @@ metadata/_edit_lock_ = true
 
 [node name="DetectiveBack_target_pos" type="Node2D" parent="DetectiveRoom" unique_id=856791579]
 unique_name_in_owner = true
-position = Vector2(340, 1055)
+position = Vector2(396, 1055)
 scale = Vector2(2, 2)
 
 [node name="DetectiveBack" parent="DetectiveRoom" unique_id=1999595215 instance=ExtResource("9_d0hba")]

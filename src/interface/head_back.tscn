@@ -6,27 +6,32 @@
 [ext_resource type="Texture2D" uid="uid://cgydyjuw031fa" path="res://assets/img/ear_2.png" id="3_cqhjx"]
 
 [node name="HeadBack" type="Node2D" unique_id=54004329]
+light_mask = 0
 script = ExtResource("1_4u0gf")
 
 [node name="Head" type="Sprite2D" parent="." unique_id=1949239465]
 unique_name_in_owner = true
+light_mask = 0
 position = Vector2(0, -1)
 texture = ExtResource("1_l4elc")
 
 [node name="EarL" type="Sprite2D" parent="." unique_id=1910765298]
 unique_name_in_owner = true
+light_mask = 0
 position = Vector2(-65, -4)
 texture = ExtResource("3_cqhjx")
 flip_h = true
 
 [node name="EarR" type="Sprite2D" parent="." unique_id=1613226260]
 unique_name_in_owner = true
+light_mask = 0
 position = Vector2(65, -4)
 texture = ExtResource("3_cqhjx")
 
 [node name="Hair" type="Sprite2D" parent="." unique_id=1161757873]
 unique_name_in_owner = true
 modulate = Color(0.3254902, 1, 0.3019608, 1)
+light_mask = 0
 texture_filter = 3
 position = Vector2(2, -33)
 texture = ExtResource("2_x45af")

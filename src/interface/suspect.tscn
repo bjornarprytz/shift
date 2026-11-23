@@ -4,6 +4,10 @@
 [ext_resource type="PackedScene" uid="uid://401m82415u77" path="res://interface/body.tscn" id="2_p6wng"]
 [ext_resource type="PackedScene" uid="uid://cvteitlb0lvqu" path="res://interface/head.tscn" id="3_bn58s"]
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_gwkry"]
+radius = 16.0
+height = 78.0
+
 [node name="Suspect" type="Node2D" unique_id=1999595215]
 script = ExtResource("1_l3hxl")
 
@@ -12,7 +16,7 @@ unique_name_in_owner = true
 
 [node name="Head" parent="." unique_id=1211529537 instance=ExtResource("3_bn58s")]
 unique_name_in_owner = true
-position = Vector2(-4, -281)
+position = Vector2(-3, -281)
 
 [node name="Control" type="Control" parent="." unique_id=1045583950]
 layout_mode = 3
@@ -22,5 +26,15 @@ offset_top = -355.0
 offset_right = 83.0
 offset_bottom = 3.0
 
+[node name="Eyes" type="Area2D" parent="." unique_id=2047242647]
+position = Vector2(0, -282)
+monitoring = false
+
+[node name="Shape" type="CollisionShape2D" parent="Eyes" unique_id=958962509]
+position = Vector2(-2, 1)
+rotation = -1.5707964
+shape = SubResource("CapsuleShape2D_gwkry")
+
 [connection signal="mouse_entered" from="Control" to="." method="_on_control_mouse_entered"]
 [connection signal="mouse_exited" from="Control" to="." method="_on_control_mouse_exited"]
+[connection signal="area_entered" from="Eyes" to="." method="_on_eyes_area_entered"]

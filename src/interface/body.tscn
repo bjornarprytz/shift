@@ -4,24 +4,30 @@
 [ext_resource type="Texture2D" uid="uid://c2jnbtcs4d71a" path="res://assets/img/eye.png" id="1_vqd80"]
 
 [node name="Body" type="Node2D" unique_id=1825212997]
+light_mask = 0
 script = ExtResource("1_mf5h4")
 
 [node name="Neck" type="ColorRect" parent="." unique_id=556696610]
 unique_name_in_owner = true
+light_mask = 0
 offset_left = -10.0
 offset_top = -218.0
 offset_right = 8.0
 offset_bottom = -177.0
+metadata/_edit_use_anchors_ = true
 
 [node name="Torso" type="ColorRect" parent="." unique_id=950394824]
 unique_name_in_owner = true
+light_mask = 0
 offset_left = -26.0
 offset_top = -200.0
 offset_right = 28.0
 offset_bottom = -100.0
 color = Color(0.16470589, 0.43137255, 0.6666667, 1)
+metadata/_edit_use_anchors_ = true
 
 [node name="ArmR" type="ColorRect" parent="Torso" unique_id=487214747]
+light_mask = 0
 layout_mode = 0
 offset_left = 54.0
 offset_right = 129.0
@@ -32,12 +38,14 @@ color = Color(0.16470589, 0.43137255, 0.6666667, 1)
 [node name="HandR" type="Sprite2D" parent="Torso/ArmR" unique_id=259743160]
 unique_name_in_owner = true
 show_behind_parent = true
+light_mask = 0
 position = Vector2(74.367256, 11.895742)
 rotation = -1.2252014
 scale = Vector2(0.49999905, 0.68750095)
 texture = ExtResource("1_vqd80")
 
 [node name="ArmL" type="ColorRect" parent="Torso" unique_id=1502567907]
+light_mask = 0
 layout_mode = 0
 offset_left = -29.0
 offset_top = 70.0
@@ -49,13 +57,16 @@ color = Color(0.16470589, 0.43137255, 0.6666667, 1)
 [node name="HandL" type="Sprite2D" parent="Torso/ArmL" unique_id=2071221840]
 unique_name_in_owner = true
 show_behind_parent = true
+light_mask = 0
 position = Vector2(2.043937, 11.866856)
 rotation = 1.3170906
 scale = Vector2(0.49999908, 0.687501)
 texture = ExtResource("1_vqd80")
 
 [node name="Legs" type="ColorRect" parent="." unique_id=235730536]
+light_mask = 0
 offset_left = -26.0
 offset_top = -100.0
 offset_right = 28.0
 color = Color(0.19013184, 0.19013187, 0.19013187, 1)
+metadata/_edit_use_anchors_ = true

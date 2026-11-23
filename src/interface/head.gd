@@ -13,7 +13,10 @@ extends Node2D
 @onready var ear_l: FacePart = %EarL
 @onready var blink_timer: Timer = %BlinkTimer
 
+var _appeareance: Appearance
+
 func apply_appearance(appearance: Appearance):
+	_appeareance = appearance
 	for s in bare_skin:
 		s.modulate = appearance.skin_color
 	hair.modulate = appearance.hair_color
@@ -27,6 +30,32 @@ func apply_appearance(appearance: Appearance):
 func set_focal_point(point: Vector2):
 	eye_r.focal_point = point
 	eye_l.focal_point = point
+
+func squint():
+	pause_blink()
+	var tween = create_tween().set_parallel()
+	tween.tween_property(eye_l, "lid_gap_lower", 2.0, .1)
+	tween.tween_property(eye_l, "lid_gap_upper", 2.0, .1)
+	tween.tween_property(eye_r, "lid_gap_lower", 2.0, .1)
+	tween.tween_property(eye_r, "lid_gap_upper", 2.0, .1)
+	tween.set_parallel(false)
+	tween.tween_callback(resume_blink)
+
+func pause_blink():
+	blink_timer.paused = true
+
+func resume_blink():
+	blink_timer.paused = false
+
+func unsquint():
+	pause_blink()
+	var tween = create_tween().set_parallel()
+	tween.tween_property(eye_l, "lid_gap_lower", _appeareance.eye_slit_gap_l, .2)
+	tween.tween_property(eye_l, "lid_gap_upper", _appeareance.eye_slit_gap_l, .2)
+	tween.tween_property(eye_r, "lid_gap_lower", _appeareance.eye_slit_gap_r, .2)
+	tween.tween_property(eye_r, "lid_gap_upper", _appeareance.eye_slit_gap_r, .2)
+	tween.set_parallel(false)
+	tween.tween_callback(resume_blink)
 
 func say(phrase: String):
 	phrase = phrase.strip_edges()
