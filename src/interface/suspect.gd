@@ -42,10 +42,11 @@ func _on_control_mouse_exited() -> void:
 func say(phrase: String):
 	head.say(phrase)
 
-func walk_to(target_global: Vector2):
+func walk_to(target_global: Vector2, offset: float=-1.0):
 	var bob_height := 10.0
 	var walk_vector = target_global - global_position
-	var offset = randf_range(0.01, 0.2)
+	if (offset == -1.0):
+		offset = randf_range(0.01, 0.2)
 	
 	if (walk_vector.length() == 0):
 		return

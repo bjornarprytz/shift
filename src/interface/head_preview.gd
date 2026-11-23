@@ -12,6 +12,13 @@ signal selection_changed(selection: String)
 
 var focus_tween: Tween
 
+func _ready() -> void:
+	var tween = create_tween().set_loops()
+	tween.tween_method(look_sideways, -300.0, 300.0, .1)
+	tween.tween_interval(2.0)
+	tween.tween_method(look_sideways, 300.0, -300.0, .1) 
+	tween.tween_interval(2.0)
+
 func juice():
 	var tween = create_tween()
 	head.say("of")
@@ -23,8 +30,11 @@ func juice():
 func apply_appearance(apperaance: Appearance):
 	head.apply_appearance(apperaance)
 
-func _process(delta: float) -> void:
-	head.set_focal_point(get_global_mouse_position())
+func look_sideways(f: float):
+	var target_pos = head.eye_l.global_position
+	var x = (head.eye_l.global_position.x + head.eye_r.global_position.x) / 2.0
+	target_pos.x = x + f
+	head.set_focal_point(target_pos)
 
 func _stop_focus():
 	if (focus_tween == null):

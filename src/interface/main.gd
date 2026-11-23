@@ -69,5 +69,7 @@ func _suspects_enter():
 		s.walk_to(p.global_position)
 
 func _action_scene():
-	detective.walk_to(detective_target_pos.global_position)
+	detective.walk_to(detective_target_pos.global_position,0.0)
 	detective_back.walk_to(detective_back_target_pos.global_position)
+	
+	

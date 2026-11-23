@@ -120,7 +120,7 @@ scale = Vector2(1.72, 1.72)
 [node name="Detective" parent="DetectiveRoom" unique_id=1764024577 instance=ExtResource("2_rfu3d")]
 unique_name_in_owner = true
 modulate = Color(1, 1, 1, 0.3019608)
-position = Vector2(-454, 793.99994)
+position = Vector2(-110, 791)
 scale = Vector2(1.72, 1.72)
 suspect_name = "Detective"
 profile = SubResource("Resource_l14rc")
@@ -154,7 +154,7 @@ scale = Vector2(2, 2)
 
 [node name="DetectiveBack" parent="DetectiveRoom" unique_id=1999595215 instance=ExtResource("9_d0hba")]
 unique_name_in_owner = true
-position = Vector2(-683, 1055)
+position = Vector2(-260, 1055)
 scale = Vector2(2, 2)
 
 [connection signal="text_submitted" from="CanvasLayer/LineEdit" to="." method="_on_line_edit_text_submitted"]

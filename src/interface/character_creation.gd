@@ -21,6 +21,8 @@ func _on_button_pressed() -> void:
 	_randomize_appearance()
 
 func _randomize_appearance():
-	await preview.juice()
 	appearance = variations.create_random_appearance()
+	appearance.eye_slit_gap_l = 2.0
+	appearance.eye_slit_gap_r = 2.0
 	preview.apply_appearance(appearance)
+	await preview.juice()

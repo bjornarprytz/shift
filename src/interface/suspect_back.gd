@@ -33,14 +33,12 @@ func _stop_bob():
 func walk_to(target_global: Vector2):
 	var bob_height := 10.0
 	var walk_vector = target_global - global_position
-	var offset = randf_range(0.01, 0.2)
 	
 	if (walk_vector.length() == 0):
 		return
 	
 	target_pos = self.global_position + walk_vector
 	bob_tween = create_tween()
-	bob_tween.tween_interval(offset)
 	bob_tween.set_loops()
 	bob_tween.tween_property(body, "position:y", -bob_height, 0.1).as_relative()
 	bob_tween.set_parallel()
