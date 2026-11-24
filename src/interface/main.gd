@@ -25,6 +25,7 @@ func _load_suspects() -> Array[Suspect]:
 		suspects.add_child(new_sus)
 		new_sus.position = (Vector2.LEFT * 700) + (Vector2.LEFT * 150.0 * i) + (Vector2.DOWN * 500.0)
 		new_sus.apply_appearance(character_variations.create_random_appearance())
+		new_sus.profile.tells = Tell.random_set(randi_range(2, 5))
 		s.push_back(new_sus)
 		i += 1
 	

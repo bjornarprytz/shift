@@ -7,10 +7,14 @@ extends Node2D
 @onready var eye_r: Eye = %EyeR
 @onready var eye_l: Eye = %EyeL
 
+@onready var cheek_r: Sprite2D = %CheekR
+@onready var cheek_l: Sprite2D = %CheekL
+
 @onready var nose: FacePart = %Nose
 @onready var mouth: Mouth = %Mouth
 @onready var ear_r: FacePart = %EarR
 @onready var ear_l: FacePart = %EarL
+@onready var head = %Head
 @onready var blink_timer: Timer = %BlinkTimer
 
 var _appeareance: Appearance

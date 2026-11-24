@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://chwjqh63mflr"]
+
+[ext_resource type="Script" uid="uid://bulvjns8rcew7" path="res://interface/tell_effect.gd" id="1_8w4w2"]
+
+[node name="TellEffect" type="Node2D" unique_id=2108226115]
+script = ExtResource("1_8w4w2")
