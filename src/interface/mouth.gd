@@ -1,6 +1,11 @@
 class_name Mouth
 extends AnimatedSprite2D
 
+func start_tell(tell: Tell):
+	pass
+
+func stop_tell(tell: Tell):
+	pass
 
 func enounciate(letter: String):
 	assert (letter.length() == 1)

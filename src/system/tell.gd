@@ -20,7 +20,7 @@ enum Effect {
 @export var part: Part
 @export var effect: Effect
 
-func get_body_part(sus: Suspect) -> Array:
+func get_body_parts(sus: Suspect) -> Array:
 	match (part):
 		Part.EARS:
 			return [sus.head.ear_l, sus.head.ear_r]
@@ -29,11 +29,11 @@ func get_body_part(sus: Suspect) -> Array:
 		Part.FACE:
 			return [sus.head.head]
 		Part.EYES:
-			return [sus.head.eye_l, sus.head.eye_r]
+			return [sus.head.eyes]
 		Part.CHEEKS:
-			return [sus.head.cheek_l, sus.head.cheek_r]
+			return [sus.head.cheeks]
 		Part.BREATHING:
-			return [sus.body.torso]
+			return [] # [sus.body.torso]
 		Part.MOUTH:
 			return [sus.head.mouth]
 		

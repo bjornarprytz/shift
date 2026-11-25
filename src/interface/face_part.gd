@@ -1,14 +1,50 @@
 class_name FacePart
-extends Sprite2D
+extends CanvasItem
 
 var is_in_effect = false
 
-func blush():
-	if is_in_effect:
+@export var sweat_particles: CPUParticles2D
+
+@export var head: Head
+
+func start_tell(tell: Tell):
+	if (is_in_effect):
 		return
-	is_in_effect = true	
-	var tween = create_tween()
-	tween.tween_property(self, "modulate", Color.PINK, 0.5).as_relative()
-	tween.tween_property(self, "modulate", Color.WHITE, 0.5).as_relative()
-	await tween.finished
+	match (tell.effect):
+		Tell.Effect.BLUSH:
+			blush()
+		Tell.Effect.TWITCH:
+			twitch()
+		Tell.Effect.SWEAT:
+			sweat(true)
+	is_in_effect = true
+
+func stop_tell(tell: Tell):
+	if (is_in_effect == false):
+		return
+	match (tell.effect):
+		Tell.Effect.BLUSH:
+			blush()
+		Tell.Effect.TWITCH:
+			twitch()
+		Tell.Effect.SWEAT:
+			sweat(true)
 	is_in_effect = false
+
+func blush(on:bool=true):
+	var color = Color.PINK if on else Color.WHITE
+	
+	var tween = create_tween()
+	tween.tween_property(self, "self_modulate", color, 0.5)
+	await tween.finished
+
+func sweat(on: bool=true):
+	if (sweat_particles == null):
+		return
+	
+	sweat_particles.emitting = on
+
+func twitch(on: bool=true):
+	if (name == "Eyes"):
+		assert(head != null)
+		head.flinch()

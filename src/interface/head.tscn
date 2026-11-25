@@ -51,14 +51,16 @@ animations = [{
 texture_filter = 3
 script = ExtResource("1_xqv0v")
 
-[node name="Head" type="Sprite2D" parent="." unique_id=2050438477]
+[node name="Head" type="Sprite2D" parent="." unique_id=2050438477 node_paths=PackedStringArray("sweat_particles")]
 unique_name_in_owner = true
-self_modulate = Color(0.72156864, 0.36862746, 0.14117648, 1)
 texture_filter = 3
 position = Vector2(2, 6)
 texture = ExtResource("1_jihge")
+script = ExtResource("3_dm2nd")
+sweat_particles = NodePath("Sweat")
 
 [node name="Sweat" type="CPUParticles2D" parent="Head" unique_id=2052495036]
+top_level = true
 position = Vector2(-1, -41)
 emitting = false
 amount = 3
@@ -67,6 +69,8 @@ emission_shape = 3
 emission_rect_extents = Vector2(35, 5)
 particle_flag_align_y = true
 gravity = Vector2(0, 69)
+scale_amount_min = 0.2
+scale_amount_max = 0.5
 color = Color(0.6156863, 0.9098039, 0.8627451, 1)
 hue_variation_min = -0.23
 hue_variation_max = 0.28
@@ -78,61 +82,130 @@ sprite_frames = SubResource("SpriteFrames_gwkry")
 frame = 2
 script = ExtResource("11_ixfgt")
 
-[node name="Nose" type="Sprite2D" parent="." unique_id=865731493]
+[node name="Nose" type="Sprite2D" parent="." unique_id=865731493 node_paths=PackedStringArray("sweat_particles")]
 unique_name_in_owner = true
-modulate = Color(0.72156864, 0.36862746, 0.14117648, 1)
 position = Vector2(2, 17)
 texture = ExtResource("2_xqv0v")
 script = ExtResource("3_dm2nd")
+sweat_particles = NodePath("Sweat")
 
-[node name="EarR" type="Sprite2D" parent="." unique_id=1351620777]
+[node name="Sweat" type="CPUParticles2D" parent="Nose" unique_id=173494131]
+top_level = true
+position = Vector2(1, 33)
+emitting = false
+amount = 2
+texture = ExtResource("3_aoua1")
+emission_shape = 3
+emission_rect_extents = Vector2(10, 5)
+particle_flag_align_y = true
+gravity = Vector2(0, 5)
+scale_amount_min = 0.2
+scale_amount_max = 0.5
+color = Color(0.6156863, 0.9098039, 0.8627451, 1)
+hue_variation_min = -0.23
+hue_variation_max = 0.28
+
+[node name="EarR" type="Sprite2D" parent="." unique_id=1351620777 node_paths=PackedStringArray("sweat_particles")]
 unique_name_in_owner = true
-modulate = Color(0.72156864, 0.36862746, 0.14117648, 1)
 texture_filter = 3
 position = Vector2(64, 0)
 texture = ExtResource("12_icn7e")
 script = ExtResource("3_dm2nd")
+sweat_particles = NodePath("Sweat")
 
-[node name="EarL" type="Sprite2D" parent="." unique_id=1127784099]
+[node name="Sweat" type="CPUParticles2D" parent="EarR" unique_id=2082237220]
+top_level = true
+position = Vector2(55, 0)
+emitting = false
+amount = 2
+texture = ExtResource("3_aoua1")
+emission_shape = 3
+emission_rect_extents = Vector2(5, 15)
+particle_flag_align_y = true
+gravity = Vector2(0, 5)
+scale_amount_min = 0.2
+scale_amount_max = 0.5
+color = Color(0.6156863, 0.9098039, 0.8627451, 1)
+hue_variation_min = -0.23
+hue_variation_max = 0.28
+
+[node name="EarL" type="Sprite2D" parent="." unique_id=1127784099 node_paths=PackedStringArray("sweat_particles")]
 unique_name_in_owner = true
-modulate = Color(0.72156864, 0.36862746, 0.14117648, 1)
 texture_filter = 3
 position = Vector2(-60, 0)
 texture = ExtResource("12_icn7e")
 flip_h = true
 script = ExtResource("3_dm2nd")
+sweat_particles = NodePath("Sweat")
 
-[node name="Eyes" type="Node2D" parent="." unique_id=1930801373]
-position = Vector2(-67, -59)
+[node name="Sweat" type="CPUParticles2D" parent="EarL" unique_id=2028660218]
+top_level = true
+position = Vector2(-52, 0)
+emitting = false
+amount = 2
+texture = ExtResource("3_aoua1")
+emission_shape = 3
+emission_rect_extents = Vector2(5, 15)
+particle_flag_align_y = true
+gravity = Vector2(0, 5)
+scale_amount_min = 0.2
+scale_amount_max = 0.5
+color = Color(0.6156863, 0.9098039, 0.8627451, 1)
+hue_variation_min = -0.23
+hue_variation_max = 0.28
+
+[node name="Eyes" type="Node2D" parent="." unique_id=1930801373 node_paths=PackedStringArray("sweat_particles", "head")]
+unique_name_in_owner = true
+script = ExtResource("3_dm2nd")
+sweat_particles = NodePath("Sweat")
+head = NodePath("..")
 
 [node name="EyeR" parent="Eyes" unique_id=1449849314 instance=ExtResource("13_cdgoc")]
 unique_name_in_owner = true
-position = Vector2(90, 59)
+position = Vector2(22, 0)
 
 [node name="EyeL" parent="Eyes" unique_id=605668187 instance=ExtResource("13_cdgoc")]
 unique_name_in_owner = true
-position = Vector2(46, 59)
+position = Vector2(-22, 0)
 is_left_eye = true
 
 [node name="BlinkTimer" type="Timer" parent="Eyes" unique_id=429267989]
 unique_name_in_owner = true
 autostart = true
 
+[node name="Sweat" type="CPUParticles2D" parent="Eyes" unique_id=1152711974]
+top_level = true
+amount = 1
+texture = ExtResource("3_aoua1")
+emission_shape = 4
+emission_points = PackedVector2Array(-7, 0, -8, 1, 7, 0, 8, 1)
+emission_colors = PackedColorArray()
+particle_flag_align_y = true
+gravity = Vector2(0, 10)
+scale_amount_min = 0.2
+scale_amount_max = 0.5
+color = Color(0.6156863, 0.9098039, 0.8627451, 1)
+hue_variation_min = -0.23
+hue_variation_max = 0.28
+
 [node name="Hair" type="Sprite2D" parent="." unique_id=18838439]
 unique_name_in_owner = true
-modulate = Color(0.3254902, 1, 0.3019608, 1)
 texture_filter = 3
 position = Vector2(2, -32)
 texture = ExtResource("15_xqv0v")
 
-[node name="CheekR" type="Sprite2D" parent="." unique_id=1864260051]
+[node name="Cheeks" type="Node2D" parent="." unique_id=1939163318]
+unique_name_in_owner = true
+script = ExtResource("3_dm2nd")
+
+[node name="CheekR" type="Sprite2D" parent="Cheeks" unique_id=1864260051]
 unique_name_in_owner = true
 modulate = Color(1, 1, 1, 0)
 position = Vector2(25, 30)
 scale = Vector2(0.365, 0.365)
 texture = ExtResource("16_dm2nd")
 
-[node name="CheekL" type="Sprite2D" parent="." unique_id=452186776]
+[node name="CheekL" type="Sprite2D" parent="Cheeks" unique_id=452186776]
 unique_name_in_owner = true
 modulate = Color(1, 1, 1, 0)
 position = Vector2(-25.999996, 30)

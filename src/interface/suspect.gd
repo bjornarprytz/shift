@@ -65,9 +65,21 @@ func walk_to(target_global: Vector2, offset: float=-1.0):
 	bob_tween.play()
 
 func unnerve() -> void:
-	head.blink_timer.wait_time = 0.2
+	head.blink_timer.wait_time = 0.32
 	head.squint()
+	
+	for t in profile.tells:
+		var parts = t.get_body_parts(self)
+		
+		for p in parts:
+			p.start_tell(t)
 
 func renerve() -> void:
 	head.blink_timer.wait_time = 1.0
 	head.unsquint()
+	
+	for t in profile.tells:
+		var parts = t.get_body_parts(self)
+		
+		for p in parts:
+			p.stop_tell(t)
