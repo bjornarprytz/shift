@@ -19,6 +19,7 @@ extends Node2D
 @onready var eye_tween: Tween
 
 var _appeareance: Appearance
+var is_free_look: bool
 
 func apply_appearance(appearance: Appearance):
 	_appeareance = appearance
@@ -31,6 +32,10 @@ func apply_appearance(appearance: Appearance):
 	nose.texture = appearance.nose
 	eye_r.apply_appearance(appearance)
 	eye_l.apply_appearance(appearance)
+
+func _process(_delta: float) -> void:
+	if is_free_look:
+		set_focal_point(get_global_mouse_position())
 
 func set_focal_point(point: Vector2):
 	eye_r.focal_point = point

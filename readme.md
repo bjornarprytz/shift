@@ -21,6 +21,12 @@ Pick a character out of a shifty lineup
 
 ### Mechanics
 
+- Refactor head states
+
+- Zoom in for info on suspect
+  - Target suspect info
+  - Shift-blame button to declare victory
+
 - Talking
   - More mouths
     - More accurate

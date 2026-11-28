@@ -15,6 +15,8 @@ var bob_tween: Tween
 
 func _ready() -> void:
 	body.set_breath(1.0, 4.0, 2.0, 2.0)
+	
+	profile.tells = Tell.random_set(randi_range(2, 5))
 
 func apply_appearance(appearance: Appearance):
 	profile.appearance = appearance
@@ -22,8 +24,6 @@ func apply_appearance(appearance: Appearance):
 	body.apply_appearance(profile.appearance)
 
 func _process(delta: float) -> void:
-	head.set_focal_point(get_global_mouse_position())
-	
 	if (target_pos != Vector2.INF and target_pos != global_position):
 		self.global_position = global_position.move_toward(target_pos, delta * walk_speed)
 	elif bob_tween != null:
@@ -65,6 +65,7 @@ func walk_to(target_global: Vector2, offset: float=-1.0):
 	bob_tween.play()
 
 func unnerve() -> void:
+	head.is_free_look = false
 	head.blink_timer.wait_time = 0.32
 	head.squint()
 	
@@ -75,6 +76,7 @@ func unnerve() -> void:
 			p.start_tell(t)
 
 func renerve() -> void:
+	head.is_free_look = true
 	head.blink_timer.wait_time = 1.0
 	head.unsquint()
 	

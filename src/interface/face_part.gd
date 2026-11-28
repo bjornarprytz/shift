@@ -8,6 +8,7 @@ var is_in_effect = false
 @export var head: Head
 
 func start_tell(tell: Tell):
+	print ("Start %s: %s" % [tell.effect, name])
 	if (is_in_effect):
 		return
 	match (tell.effect):
@@ -16,19 +17,20 @@ func start_tell(tell: Tell):
 		Tell.Effect.TWITCH:
 			twitch()
 		Tell.Effect.SWEAT:
-			sweat(true)
+			sweat()
 	is_in_effect = true
 
 func stop_tell(tell: Tell):
+	print ("Stop %s: %s" % [tell.effect, name])
 	if (is_in_effect == false):
 		return
 	match (tell.effect):
 		Tell.Effect.BLUSH:
-			blush()
+			blush(false)
 		Tell.Effect.TWITCH:
-			twitch()
+			twitch(false)
 		Tell.Effect.SWEAT:
-			sweat(true)
+			sweat(false)
 	is_in_effect = false
 
 func blush(on:bool=true):
