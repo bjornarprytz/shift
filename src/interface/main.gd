@@ -1,5 +1,7 @@
 extends Node2D
 
+@onready var camera: Camera2D = %Camera
+
 @onready var suspect_factory = preload("res://interface/suspect.tscn")
 @onready var spotlight: PointLight2D = %Spotlight
 
@@ -8,11 +10,26 @@ extends Node2D
 
 @onready var suspects: Node2D = %Suspects
 @onready var lineup_pos: Node2D = $LineupPos
-@onready var detective: Suspect = %Detective
+@onready var detective: Suspect = %DetectiveReflection
 @onready var detective_back: SuspectBack = %DetectiveBack
 
 @onready var detective_target_pos: Node2D = %Detective_target_pos
 @onready var detective_back_target_pos: Node2D = %DetectiveBack_target_pos
+
+var focus_tween: Tween
+
+func _on_focus_changed(s: Suspect):
+	if (focus_tween != null):
+		focus_tween.stop()
+	
+	var target_pos = s.head.global_position if s != null else Vector2(640.0, 360.0)
+	var target_zoom = Vector2.ONE * 3.5 if s != null else Vector2.ONE
+	var target_detective_alpha = 0.0 if s != null else .4
+	
+	focus_tween = create_tween().set_parallel().set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_CIRC)
+	focus_tween.tween_property(camera, "global_position", target_pos, .5)
+	focus_tween.tween_property(camera, "zoom", target_zoom, .5)
+	focus_tween.tween_property(detective, "modulate:a", target_detective_alpha, .1)
 
 func _process(delta: float) -> void:
 	spotlight.global_position = get_global_mouse_position()
@@ -26,6 +43,7 @@ func _load_suspects() -> Array[Suspect]:
 		new_sus.position = (Vector2.LEFT * 700) + (Vector2.LEFT * 150.0 * i) + (Vector2.DOWN * 500.0)
 		new_sus.apply_appearance(character_variations.create_random_appearance())
 		new_sus.head.is_free_look = true
+		new_sus.focus.connect(_on_focus_changed)
 		s.push_back(new_sus)
 		i += 1
 	
@@ -47,6 +65,7 @@ func _get_lineup_pos() -> Array[Node2D]:
 
 func _ready() -> void:
 	_load_suspects()
+	detective.clickable.hide()
 
 func _on_left_button_pressed() -> void:
 	print("Pressed left button")

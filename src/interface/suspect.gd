@@ -1,10 +1,13 @@
 class_name Suspect
 extends Node2D
 
+signal focus(sus: Suspect)
+
 @export var suspect_name: String = ["J", "S", "D", "G", "C", "L"].pick_random()
 @export var walk_speed: float = 400.0
 @export var profile: Profile = Profile.new()
 
+@onready var clickable: Control = %Control
 @onready var body: Body = %Body
 @onready var head: Head = %Head
 
@@ -32,12 +35,6 @@ func _process(delta: float) -> void:
 func _stop_bob():
 	await bob_tween.loop_finished
 	bob_tween.kill()
-
-func _on_control_mouse_entered() -> void:
-	unnerve()
-
-func _on_control_mouse_exited() -> void:
-	renerve()
 
 func say(phrase: String):
 	head.say(phrase)
@@ -85,3 +82,8 @@ func renerve() -> void:
 		
 		for p in parts:
 			p.stop_tell(t)
+
+
+func _on_control_gui_input(event: InputEvent) -> void:
+	if (event is InputEventMouseButton and event.is_pressed()):
+		focus.emit(self)
